@@ -429,3 +429,20 @@ a {
   padding: 2rem;
   margin-top: 150px;
 }
+
+.bookAppointment {
+  padding: 10px 20px;
+  background-color: #274C77;
+  color: #F1F0E8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.bookAppointment:hover{
+  background-color: #F1F0E8;
+  color: #274C77;
+}
