@@ -430,7 +430,7 @@ a {
   margin-top: 150px;
 }
 
-.bookAppointment2 {
+.bookAppointment {
   padding: 10px 20px;
   background-color: #274C77;
   color: #F1F0E8;
@@ -442,7 +442,7 @@ a {
   text-decoration: none;
 }
 
-.bookAppointment2:hover{
+.bookAppointment:hover{
   background-color: #F1F0E8;
   color: #274C77;
 }
