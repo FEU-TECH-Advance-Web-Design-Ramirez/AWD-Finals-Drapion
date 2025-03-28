@@ -446,3 +446,17 @@ a {
   background-color: #F1F0E8;
   color: #274C77;
 }
+
+@media (max-width: 992px) {
+  .content-section-1 {
+    background: none;
+    color: #274C77;
+    background-color: #E7ECEF;
+  }
+
+  .content-section-1 .container {
+    text-align: center;
+    left: 0;
+    padding: 1rem;
+    margin-top: 0px;
+  }
