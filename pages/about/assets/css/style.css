@@ -348,3 +348,41 @@
 .team-section {
   background-color: #F1F0E8;
 }
+
+.team-member {
+  text-align: center;
+}
+
+.team-img {
+  width: 120px;
+  height: 120px;
+  background-color: #C4C4C4;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px){
+  .team-section .container{
+      width: 50%;
+  }
+}
+
+.shane {
+background-image: url('../img/team-img-s.png');
+}
+
+.amilia {
+background-image: url('../img/team-img-am.png');
+}
+
+.hannah {
+background-image: url('../img/team-img-h.png');
+}
+
+.daniel {
+background-image: url('../img/team-img-d.png');
+}
+
+.ashley {
+background-image: url('../img/team-img-as.png');
+}
