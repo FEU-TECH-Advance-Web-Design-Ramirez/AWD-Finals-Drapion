@@ -396,3 +396,36 @@
     max-width: 90%;
   }
 }
+
+/* ====== First Section ====== */
+body {
+  overflow-x: hidden;
+  font-synthesis: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content-section-1 {
+  background: url(../img/contentSection1BG.png) no-repeat center center/contain;
+  position: relative;
+  padding-bottom: 8rem;
+  color: #F1F0E8;
+  background-color: #E7ECEF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content-section-1 .container {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  position: relative;
+  padding: 2rem;
+  margin-top: 150px;
+}
