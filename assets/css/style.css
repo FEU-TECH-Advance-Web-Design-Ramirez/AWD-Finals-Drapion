@@ -460,3 +460,16 @@ a {
     padding: 1rem;
     margin-top: 0px;
   }
+}
+
+.content-section-2{
+  background: url(../img/contentSectionBG2.png) no-repeat center center/cover;
+}
+
+.content-section-2 h2{
+  color: #F1F0E8;
+}
+
+.content-section-2{
+background-color: #E7ECEF;
+}
