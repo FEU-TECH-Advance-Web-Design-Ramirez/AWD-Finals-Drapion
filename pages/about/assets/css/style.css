@@ -309,3 +309,37 @@
   height: auto;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 991px) {
+  .mnv-heading {
+    font-size: 2rem;
+  }
+
+  .mnv-desc {
+    font-size: 1rem;
+  }
+
+  .mnv-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .mnv-section img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .mnv-heading {
+    font-size: 1.8rem;
+  }
+
+  .mnv-desc {
+    font-size: 0.9rem;
+  }
+
+  .mnv-heading, .mnv-desc {
+    width: 90%;
+    text-align: center;
+  }
+}
