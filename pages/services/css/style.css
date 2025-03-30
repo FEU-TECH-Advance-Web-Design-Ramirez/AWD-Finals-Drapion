@@ -338,3 +338,103 @@
     max-width: 90%;
   }
 }
+
+/* ====== Hero Section ====== */
+
+.medi-section {
+  background-color: #F1F0E8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #F1F0E8;
+  padding: 4rem 8rem;
+  overflow: hidden;
+}
+
+
+.medi-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.medi-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  color: #274C77;
+}
+
+.medi-desc {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.medi-img{
+  background: url(../img/meditationSectionImg.jpg) no-repeat center center/cover;
+  border-radius: 30px;
+  width: min(400px, 400px);
+  height: min(400px, 400px);
+}
+
+@media (max-width: 991px) {
+  .medi-heading {
+    font-size: 2rem;
+  }
+
+  .medi-desc {
+    font-size: 1rem;
+  }
+
+  .medi-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .medi-section img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .medi-heading {
+    font-size: 1.8rem;
+  }
+
+  .medi-desc {
+    font-size: 0.9rem;
+  }
+
+  .medi-heading, .medi-desc {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px){
+  .col-lg-6{
+      width: 100%;
+  }
+}
+.cta-button {
+  margin-top: 1rem;
+  padding: 1rem 6rem;
+  font-size: 1.2rem;
+  color: #F1F0E8;
+  background-color: #274C77;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.5s ease;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #89A8B2;
+  color: #274C77;
+}
