@@ -439,10 +439,10 @@
   color: #274C77;
 }
 
-.medi-prompt-section{
+.mp-section{
   background-color: #F1F0E8;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -453,30 +453,29 @@
   overflow: hidden;
 }
 
-.medi-prompt-section .container {
+.mp-section .container {
   position: relative;
   z-index: 1;
   width: min(800px, 90%);
 }
 
-.medi-prompt-heading {
-  font-size: 2.5rem;
+.mp-heading {
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0rem;
   color: #274C77;
 }
 
-.medi-prompt-desc {
+.mp-desc {
   margin-top: 1rem;
-  font-size: 1.3rem;
-  line-height: 1;
+  font-size: 1.2rem;
   color: #000000;
   line-height: 1.4;
 }
 
 /*audio player*/
 .custom-audio-player {
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 16px;

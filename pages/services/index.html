@@ -61,6 +61,7 @@
             </button>
          </div>
       </nav>
+
       <!-- Hero Section -->
       <section class="hero-section py-5">
          <div class="container">
@@ -75,6 +76,7 @@
             </div>
          </div>
       </section>
+
       <!-- Meditation Section -->
       <section class="medi-section py-5" id="meditation">
          <div class="container">
@@ -92,30 +94,32 @@
             </div>
          </div>
       </section>
-      <section class="medi-prompt-section py-5">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col">
-                  <h2 class="medi-prompt-heading fw-bold">Just want to meditate?</h2>
-                  <p class="medi-prompt-desc">Click the play button below for a mini-guided meditation, or keep scrolling to try your first full guided meditation.</p>
-               </div>
-               <div class="col">
-                  <!-- Custom Audio Player Section -->
-                  <div class="custom-audio-player">
-                     <h2 class="audio-title">Guided meditation</h2>
-                     <div class="audio-controls">
-                        <button id="playPauseBtn" class="play-btn"></button>
-                        <span id="currentTime">0:00</span>
-                        <input type="range" id="seekBar" value="0" step="0.01">
-                        <span id="duration">1:15</span>
-                     </div>
-                     <!-- audio-->
-                     <audio id="audio" src="/assets/img/One Minute Guided Meditation.mp3"></audio>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+
+      <section class="mp-section py-5" id="meditation">
+        <div class="container">
+           <div class="row align-items-center">
+              <div class="col d-flex flex-column align-items-start text-left">
+                <h2 class="mp-heading fw-bold mb-3">Just want to meditate?</h2>
+                <p class="mp-desc">Click the play button below for a mini-guided meditation, or keep scrolling to try your first full guided meditation.</p>
+              </div>
+              <div class="col d-flex flex-column align-items-center">
+                 <!-- Custom Audio Player Section -->
+                 <div class="custom-audio-player">
+                    <h2 class="audio-title">Guided meditation</h2>
+                    <div class="audio-controls">
+                       <button id="playPauseBtn" class="play-btn"></button>
+                       <span id="currentTime">0:00</span>
+                       <input type="range" id="seekBar" value="0" step="0.01">
+                       <span id="duration">1:15</span>
+                    </div>
+                    <!-- audio-->
+                    <audio id="audio" src="/assets/img/One Minute Guided Meditation.mp3"></audio>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+
       <!-- Footer -->
       <footer class="footer">
          <div class="container">
