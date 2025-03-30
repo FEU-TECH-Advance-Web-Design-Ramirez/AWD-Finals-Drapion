@@ -283,6 +283,7 @@
 .mj-section .container {
   position: relative;
   z-index: 1;
+  width: min(800px, 90%);
 }
 
 .mj-heading {
@@ -290,11 +291,10 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: #F1F0E8;
-  width: 70%;
 }
 
 .mj-section img {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -305,5 +305,21 @@
   margin: 0;
   line-height: 1.6;
   color: #d9e4ec;
-  width: 70%;
+}
+
+.moodCheck {
+  padding: 10px 20px;
+  background-color: #274C77;
+  color: #F1F0E8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.moodCheck:hover{
+  background-color: #F1F0E8;
+  color: #274C77;
 }
