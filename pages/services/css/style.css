@@ -339,7 +339,7 @@
   }
 }
 
-/* ====== Hero Section ====== */
+/* ====== Meditation Section ====== */
 
 .medi-section {
   background-color: #F1F0E8;
@@ -423,18 +423,117 @@
   }
 }
 .cta-button {
-  margin-top: 1rem;
-  padding: 1rem 6rem;
-  font-size: 1.2rem;
-  color: #F1F0E8;
+  padding: 10px 30px;
   background-color: #274C77;
+  color: #F1F0E8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
   text-decoration: none;
-  border-radius: 50px;
-  transition: background 0.5s ease;
-  text-align: center;
 }
 
 .cta-button:hover {
   background-color: #89A8B2;
   color: #274C77;
+}
+
+.medi-prompt-section{
+  background-color: #F1F0E8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #F1F0E8;
+  padding: 4rem 8rem;
+  overflow: hidden;
+}
+
+.medi-prompt-section .container {
+  position: relative;
+  z-index: 1;
+  width: min(800px, 90%);
+}
+
+.medi-prompt-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  color: #274C77;
+}
+
+.medi-prompt-desc {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #000000;
+  line-height: 1.4;
+}
+
+/*audio player*/
+.custom-audio-player {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #E8E5DF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audio-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #274C77;
+  margin-bottom: 1rem;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #274C77 url('/assets/img/play-icon.png') no-repeat center;
+  background-size: 40%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.play-btn.pause {
+  background: #274C77 url('/assets/img/pause-icon.png') no-repeat center;
+  background-size: 40%;
+}
+
+.audio-controls span {
+  font-size: 1rem;
+  color: #7E8A94;
+}
+
+#seekBar {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #6C757D;
+  outline: none;
+  border-radius: 5px;
+}
+
+#seekBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #274C77;
+  cursor: pointer;
 }

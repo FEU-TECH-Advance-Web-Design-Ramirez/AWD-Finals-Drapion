@@ -81,7 +81,7 @@
      <section class="medi-section py-5" id="meditation">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col">
+                <div class="col d-flex flex-column align-items-center">
                     <div class="medi-img"></div>
                 </div>
                 <div class="col d-flex flex-column align-items-start text-left">
@@ -92,6 +92,33 @@
                     <a href="../meditation/index.html" class="cta-button">Try for free?</a>
              </div>
           </div>
+        </div>
+     </section>
+
+     <section class="medi-prompt-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+            <h2 class="medi-prompt-heading fw-bold">Just want to meditate?</h2>
+            <p class="medi-prompt-desc">Click the play button below for a mini-guided meditation, or keep scrolling to try your first full guided meditation.</p>
+            </div>
+            <div class="col">
+                <!-- Custom Audio Player Section -->
+         <div class="custom-audio-player">
+         <h2 class="audio-title">Guided meditation</h2>
+         <div class="audio-controls">
+            <button id="playPauseBtn" class="play-btn"></button>
+            <span id="currentTime">0:00</span>
+            <input type="range" id="seekBar" value="0" step="0.01">
+            <span id="duration">1:15</span>
+         </div>
+         <!-- audio-->
+         <audio id="audio" src="/assets/img/One Minute Guided Meditation.mp3"></audio>
+        </div>
+            </div>
+            </div>
+            
+            
         </div>
      </section>
 
