@@ -33,8 +33,8 @@
                           <span>About</span> <!-- This is the part that gets underlined -->
                        </a>
                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                          <li><a class="dropdown-item" href="./pages/page1/index.html">Mission & Vision</a></li>
-                          <li><a class="dropdown-item" href="./pages/page1/index.html">Our Team</a></li>
+                          <li><a class="dropdown-item" href="../about/index.html">Mission & Vision</a></li>
+                          <li><a class="dropdown-item" href="../about/index.html#team">Our Team</a></li>
                        </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -42,20 +42,20 @@
                           <span>Services</span> <!-- This is the part that gets underlined -->
                        </a>
                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                          <li><a class="dropdown-item" href="">Meditations</a></li>
+                          <li><a class="dropdown-item" href="../meditation/index.html">Meditations</a></li>
                           <li><a class="dropdown-item" href="">Mood Journal</a></li>
                        </ul>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link mx-lg-2" aria-current="page" href="">Resources</a>
+                       <a class="nav-link mx-lg-2" aria-current="page" href="../resources/index.html">Resources</a>
                     </li>
                     <li class="nav-item">
-                     <a class="nav-link mx-lg-2 logout-link" aria-current="page" href="">Logout</a>
+                     <a class="nav-link mx-lg-2 logout-link" aria-current="page" href="../../index.html">Logout</a>
                   </li>
                  </ul>
               </div>
            </div>
-           <button class="logout" onclick="">Logout</button>
+           <button class="logout" onclick="" href="../../index.html">Logout</button>
            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
            </button>
@@ -73,17 +73,27 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Resources</a></li>
-                </ul>
-            </div>
-            <div class="footer-logo">
-                <img src="" alt="">
-            </div>
-            <p>&copy; 2025 Soul Speak. All rights reserved.</p>
+           <footer class="py-5">
+              <div class="row">
+                 <div class="col-6 col-md-2 mb-3">
+                    <ul class="footer flex-column list-unstyled">
+                       <li class="footer-item mb-2"><a href="../about/index.html" class="footer-link p-0 text-body-secondary">About</a></li>
+                       <li class="footer-item mb-2"><a href="" class="footer-link p-0 text-body-secondary">Services</a></li>
+                       <li class="footer-item mb-2"><a href="../resources/index.html" class="footer-link p-0 text-body-secondary">Resources</a></li>
+                    </ul>
+                 </div>
+                 <div class="col-6 col-md-2 mb-3">
+                    <h5>Web Designer</h5>
+                    <h6>Drapion</h6>
+                 </div>
+                 <div class="col-md-7 offset-md-1 mb-3">
+                    <img src="./assets/img/soulspeakLogo.png" alt="Soul Speak Logo">
+                 </div>
+              </div>
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                 <p>Copyright &copy; 2025 Soul Speak. All rights reserved.</p>
+              </div>
+           </footer>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
