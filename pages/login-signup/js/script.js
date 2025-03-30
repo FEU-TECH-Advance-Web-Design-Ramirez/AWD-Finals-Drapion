@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       // Store the logged-in user in sessionStorage (simulating a login session)
       sessionStorage.setItem('loggedInUser', email);
-      window.location.href = './pages/dashboard/index.html'; // Redirect to account page after successful login
+      window.location.href = '/AWD-Finals-Drapion/pages/dashboard/index.html'; // Redirect to account page after successful login
   }
   
   function checkLogin() {
@@ -69,5 +69,5 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function logoutUser() {
       sessionStorage.removeItem('loggedInUser');
-      window.location.href = '/AWD-Finals-Drapion/index.html'; // Redirect to login after logout
+      window.location.href = '/AWD-Finals-Drapion/index.html'; // Redirect to landing after logout
   }
