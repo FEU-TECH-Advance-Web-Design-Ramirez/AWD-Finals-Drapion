@@ -256,3 +256,54 @@
     font-size: 0.875rem;
   }
 }
+
+.mj-section {
+  background: url(../img/mjbackground.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F1F0E8;
+  padding: 4rem 1rem;
+}
+
+.mj-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.mj-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.mj-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #F1F0E8;
+  width: 70%;
+}
+
+.mj-section img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.mj-desc {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+  color: #d9e4ec;
+  width: 70%;
+}
