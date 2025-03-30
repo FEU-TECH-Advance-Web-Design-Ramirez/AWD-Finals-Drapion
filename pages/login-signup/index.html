@@ -68,7 +68,15 @@
         <div class="container">
             <div class="doubleSlider" id="doubleSlider">
                 <div class="form-container register-container">
-                    
+                    <form onsubmit="signupUser(event)">
+                        <h1>Create Your Account</h1>
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" id="signup-email" placeholder="Email Address" required>
+                        <input type="password" id="signup-password" placeholder="Create Password" required>
+                        <p id="signup-message"></p>
+                        <button type="submit">Sign Up</button>
+                        
+                    </form>
                 </div>
             </div>
         </div>
