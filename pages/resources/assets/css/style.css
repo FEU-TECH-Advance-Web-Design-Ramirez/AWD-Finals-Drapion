@@ -256,3 +256,88 @@
       font-size: 0.875rem;
     }
   }
+
+  /* ====== Hero Section ====== */
+
+.hero-section {
+  background: url(../img/heroSectionBackground.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F1F0E8;
+  padding: 4rem 1rem;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  width: min(800px, 90%);
+}
+
+.hero-heading {
+  font-size: 3.6rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #F1F0E8;
+  line-height: 1.4;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.6;
+  color: #d9e4ec;
+}
+
+.hero-stats-desc{
+  color: #F1F0E8;
+}
+
+.hero-section img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .hero-section img {
+    max-width: 90%;
+  }
+}
