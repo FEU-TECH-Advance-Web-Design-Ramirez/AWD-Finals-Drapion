@@ -75,7 +75,20 @@
                         <input type="password" id="signup-password" placeholder="Create Password" required>
                         <p id="signup-message"></p>
                         <button type="submit">Sign Up</button>
-                        
+                    </form>
+                </div>
+                <div class="form-container login-container">
+                    <form onsubmit="loginUser(event)">
+                        <h1>Login</h1>
+                        <input type="email" id="login-email" placeholder="Email Address" required>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <div class="content">
+                            <div class="pass-link">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </div>
+                        <p id="login-message"></p>
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>
