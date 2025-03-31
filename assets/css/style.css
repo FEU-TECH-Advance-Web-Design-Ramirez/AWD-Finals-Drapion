@@ -407,8 +407,8 @@ a {
   text-decoration: none;
 }
 
-.content-section-1 {
-  background: url(../img/contentSection1BG.png) no-repeat center center/contain;
+.cs1 {
+  background: url(../img/cs1-bg.png) no-repeat center center/contain;
   position: relative;
   padding-bottom: 8rem;
   color: #F1F0E8;
@@ -419,15 +419,20 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-size: 110%;
 }
 
-.content-section-1 .container {
+.cs1 .container {
   width: 100%;
-  max-width: 1200px;
   height: auto;
   position: relative;
   padding: 2rem;
-  margin-top: 150px;
+  margin-top: 25vh;
+}
+
+.lead{
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .bookAppointment {
@@ -448,45 +453,45 @@ a {
 }
 
 @media (max-width: 992px) {
-  .content-section-1 {
+  .cs1 {
     background: none;
     color: #274C77;
     background-color: #E7ECEF;
   }
 
-  .content-section-1 .container {
+  .cs1 .container {
     text-align: center;
     left: 0;
     padding: 1rem;
     margin-top: 0px;
   }
 
-  .content-section-2{
-    background: url(../img/contentSectionBG2.png) no-repeat center center/cover;
+  .cs2{
+    background: url(../img/cs2-bg.png) no-repeat center center/cover;
   }
 
-  .content-section-2 h2{
+  .cs2 h2{
     color: #F1F0E8;
   }
 }
 
-.content-section-2{
+.cs2{
   background-color: #E7ECEF;
 }
 
-.content-section-2 .card{
+.cs2 .card{
   border-radius: 30px;
 }
 
 
 @media (min-width: 991px) {
-  .content-section-2 .card {
+  .cs2 .card {
     width: 100%;
 }
-.content-section-2 .container {
+.cs2 .container {
   max-width: 750px;
 }
-.content-section-2 h2{
+.cs2 h2{
   color: #274C77;
 }
 }
