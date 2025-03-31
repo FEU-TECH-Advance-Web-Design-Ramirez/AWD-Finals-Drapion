@@ -337,3 +337,50 @@
     max-width: 90%;
   }
 }
+
+.div-block-58 {
+  border-bottom: 2px dotted #274C77;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.div-block-58 h3 {
+  font-size: 1.2rem;
+  color: #274C77;
+  margin: 0;
+}
+
+.div-block-58 p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.link-block-4 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #274C77;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.link-block-4:hover {
+  color: #1D3557;
+}
+
+.link-block-4 img {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+.cs1-section{
+  padding: 20px 0;
+  background-color: #F1F0E8;
+}
