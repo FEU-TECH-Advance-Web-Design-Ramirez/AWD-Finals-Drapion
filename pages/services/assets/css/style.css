@@ -625,8 +625,80 @@
   }
 }
 
-@media (min-width: 992px){
-  .col-lg-6{
-      width: 100%;
+/* ====== Personality Exam Section ====== */
+
+.pte-section {
+  background-color: #F1F0E8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #F1F0E8;
+  padding: 4rem 8rem;
+  overflow: hidden;
+}
+
+
+.pte-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.pte-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  color: #274C77;
+}
+
+.pte-desc {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.pte-img{
+  background: url(../img/pte-img.webp) no-repeat center center/cover;
+  border-radius: 30px;
+  width: min(400px, 400px);
+  height: min(400px, 400px);
+}
+
+@media (max-width: 991px) {
+  .pte-heading {
+    font-size: 2rem;
+  }
+
+  .pte-desc {
+    font-size: 1rem;
+  }
+
+  .pte-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .pte-section img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .pte-heading {
+    font-size: 1.8rem;
+  }
+
+  .pte-desc {
+    font-size: 0.9rem;
+  }
+
+  .pte-heading, .pte-desc {
+    width: 90%;
+    text-align: center;
   }
 }
