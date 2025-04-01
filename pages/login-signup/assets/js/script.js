@@ -22,6 +22,36 @@ document.addEventListener("DOMContentLoaded", function () {
   loginButton.addEventListener("click", () => {
       doubleSlider.classList.remove("right-panel-active");
   });
+
+  window.addEventListener("resize", function () {
+    const lsbSection = document.querySelector(".lsbsection");
+    if (window.innerWidth <= 900) {
+      lsbSection.style.display = "none";
+    } else {
+      lsbSection.style.display = "block";
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    const smlSection = document.querySelector(".sml-section");
+    if (window.innerWidth >= 901) {
+      smlSection.style.display = "none";
+    } else {
+      smlSection.style.display = "block";
+    }
+  });
+
+  function toggleSmlForm(type) {
+    if (type === "signup") {
+        document.getElementById("sml-login-form").classList.add("sml-hidden");
+        document.getElementById("sml-signup-form").classList.remove("sml-hidden");
+        document.getElementById("sml-form-title").innerText = "Signup Form";
+    } else {
+        document.getElementById("sml-signup-form").classList.add("sml-hidden");
+        document.getElementById("sml-login-form").classList.remove("sml-hidden");
+        document.getElementById("sml-form-title").innerText = "Login Form";
+    }
+}
   
   function signupUser(event) {
       event.preventDefault();

@@ -64,7 +64,7 @@
 
 
     <!-- Login/Signup Section -->
-    <section class="login-signup-section d-flex align-items-center justify-content-center">
+    <section class="login-signup-section d-flex align-items-center justify-content-center lsbsection">
         <div class="container">
             <div class="doubleSlider" id="doubleSlider">
                 <div class="form-container register-container">
@@ -72,7 +72,7 @@
                         <h1>Create Your Account</h1>
                         <input type="text" placeholder="Full Name">
                         <input type="email" id="signup-email" placeholder="Email Address" required>
-                        <input type="password" id="signup-password" placeholder="Create Password" required>
+                        <input type="password" id="signup-password" placeholder="Password" required>
                         <p id="signup-message"></p>
                         <button class="ls-btn" type="submit">Sign Up</button>
                     </form>
@@ -113,6 +113,42 @@
         </div>
     </section>
 
+    <!-- Login/Signup Section (Minimal Design for smlsection) -->
+    <section class="sml-section">
+      <div class="sml-container">
+      <div class="row align-items-center">
+         <div class="sml-title-text">
+             <span id="sml-form-title">Login Form</span>
+         </div>
+ 
+         <div class="sml-slide-controls">
+             <label for="sml-login-btn" onclick="toggleSmlForm('login')">Login</label>
+             <label for="sml-signup-btn" onclick="toggleSmlForm('signup')">Signup</label>
+         </div>
+ 
+         <div class="sml-form-container">
+             <!-- Login Form -->
+             <div id="sml-login-form">
+                 <input type="email" class="form-control" placeholder="Email Address" required>
+                 <input type="password" class="form-control" placeholder="Password" required>
+                 <a href="#" class="d-block text-end">Forgot password?</a>
+                 <button class="sml-btn">Login</button>
+                 <p>Not a member? <a href="#" onclick="toggleSmlForm('signup')">Signup now</a></p>
+             </div>
+ 
+             <!-- Signup Form -->
+             <div id="sml-signup-form" class="sml-hidden">
+                 <input type="text" class="form-control" placeholder="Full Name" required>
+                 <input type="email" class="form-control" placeholder="Email Address" required>
+                 <input type="password" class="form-control" placeholder="Password" required>
+                 <input type="password" class="form-control" placeholder="Confirm Password" required>
+                 <button class="sml-btn">Signup</button>
+                 <p>Already have an account? <a href="#" onclick="toggleSmlForm('login')">Login</a></p>
+             </div>
+         </div>
+     </div>
+     </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
