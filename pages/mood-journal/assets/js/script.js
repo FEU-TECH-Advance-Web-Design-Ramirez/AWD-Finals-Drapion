@@ -289,3 +289,68 @@ function getActiveDay(date) {
           };
           return moodColors[mood] || "#E5E1DA"; 
           }
+// Save journal entry (one entry per day)
+function saveJournalEntry() {
+  const title = addJournalTitle.value.trim();
+  const content = addJournalContent.value.trim();
+  
+  if (!title || !content || !selectedMood) {
+      alert("Please fill all fields and select a mood.");
+      return;
+  }
+  
+  let entryExists = false;
+  
+  eventsArr.forEach((journal) => {
+      if (journal.day === activeDay && journal.month === month + 1 && journal.year === year) {
+          if (selectedJournal) {
+              selectedJournal.title = title;
+              selectedJournal.content = content;
+              selectedJournal.mood = selectedMood;
+              selectedJournal.time = new Date().toLocaleTimeString();
+              alert("Journal entry updated successfully!");
+              selectedJournal = null;
+              entryExists = true;
+          } else {
+              alert("Your journal entry for today has been recorded already.");
+              entryExists = true;
+          }
+      }
+  });
+  
+  if (!entryExists) {
+      eventsArr.push({
+          day: activeDay,
+          month: month + 1,
+          year,
+          journals: [{
+              title,
+              content,
+              mood: selectedMood, 
+              time: new Date().toLocaleTimeString()
+          }],
+      });
+      alert("Journal entry saved successfully!");
+  }
+  
+  saveEntries(); 
+  updateJournals(activeDay);
+  applyMoodColorsToCalendar(); 
+  addJournalWrapper.classList.remove("active");
+  addJournalTitle.value = "";
+  addJournalContent.value = "";
+  }
+
+  // Prevents opening the journal entry form again if an entry exists
+addEntryBtn.addEventListener("click", () => {
+  let entryExists = eventsArr.some(journal => 
+      journal.day === activeDay && journal.month === month + 1 && journal.year === year
+  );
+  
+  if (entryExists) {
+      alert("Your journal entry for today has been recorded already.");
+      return;
+  }
+  
+  addJournalWrapper.classList.add("active");
+  });
