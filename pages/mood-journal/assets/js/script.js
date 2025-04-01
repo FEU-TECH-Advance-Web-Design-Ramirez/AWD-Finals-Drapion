@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
 // Functions
+// Initialize the calendar
 function initCalendar() {
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
@@ -89,31 +90,55 @@ function initCalendar() {
   const lastDate = lastDay.getDate();
   const day = firstDay.getDay();
   const nextDays = 7 - lastDay.getDay() - 1;
-
+  
   date.innerHTML = `${months[month]} ${year}`;
+  
   let days = "";
-
+  
+  // Previous month's days
   for (let x = day; x > 0; x--) {
       days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
   }
-
+  
+  // Current month's days
   for (let i = 1; i <= lastDate; i++) {
-      const isToday = i === today.getDate() && year === today.getFullYear() && month === today.getMonth();
+      const isToday =
+          i === today.getDate() &&
+          year === today.getFullYear() &&
+          month === today.getMonth();
+  
+      const journalEntry = eventsArr.find(
+          (event) => event.day === i && event.month === month + 1 && event.year === year
+      );
+  
+      let moodColors = {
+          "glad": "#00a8a8",
+          "happy": "#9dcd5a",
+          "disappointed": "#76b9f0",
+          "sad": "#e39751",
+          "mad": "#c4391d"
+      };
+  
+      let moodColor = journalEntry ? moodColors[journalEntry.journals[0].mood] : "";
+  
       if (isToday) {
           activeDay = i;
-          days += `<div class="day today active">${i}</div>`;
+          getActiveDay(i);
+          updateJournals(i);
+          days += `<div class="day today active" style="background-color: ${moodColor};">${i}</div>`;
       } else {
-          days += `<div class="day">${i}</div>`;
+          days += `<div class="day" style="background-color: ${moodColor};">${i}</div>`;
       }
   }
-
+  
+  // Next month's days
   for (let j = 1; j <= nextDays; j++) {
       days += `<div class="day next-date">${j}</div>`;
   }
-
+  
   daysContainer.innerHTML = days;
   addDayListeners();
-}
+  }
 
 function addDayListeners() {
   const days = document.querySelectorAll(".day");
