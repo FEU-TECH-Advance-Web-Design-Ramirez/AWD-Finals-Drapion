@@ -546,3 +546,112 @@
   .doubleSlider.right-panel-active .overlay-right {
     transform: translateX(20%);
   }
+
+  @media (max-width: 900px) {
+    .lsbsection{
+      display: none !important;
+    }
+}
+
+@media (min-width: 901px) {
+  .sml-section{
+    display: none !important;
+  }
+}
+
+/* Login Signup Small lsssmsection */
+.sml-section{
+  background: url(../img/soulspeakHeroSectionBG.png) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F1F0E8;
+  padding: 4rem 1rem;
+}
+
+.sml-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sml-container {
+  max-width: 500px;
+  background-color: #f4f8fd1a;
+  backdrop-filter: blur(3px);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.sml-wrapper {
+  width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.sml-title-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.sml-slide-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sml-slide-controls label {
+  cursor: pointer;
+  padding: 5px 15px;
+  background: #274C77;
+  color: #fff;
+  border-radius: 5px;
+}
+.sml-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sml-hidden {
+  display: none;
+}
+.sml-btn {
+  width: 120px;
+  background: #274C77;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.sml-btn:hover {
+  background: #89A8B2;
+}
+
+.text-end{
+  text-align: left !important;
+  color: #F1F0E8;
+}
+
+.sml-section a{
+  color: #F1F0E8;
+}
