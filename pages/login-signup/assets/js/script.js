@@ -219,7 +219,15 @@ function loginUser(event) {
     const password = document.getElementById("login-password").value;
     const messageBox = document.getElementById("login-message");
 
-    // 🔴 Check if user exists in localStorage first
+    const adminEmail = "admin@example.com";
+    const adminPassword = "admin1234";
+
+    if (email === adminEmail && password === adminPassword) {
+        sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
+        window.location.href = "../../../admin/users/index.html";  // Redirect to admin panel
+        return;
+    }
+
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (storedUser && storedUser.email === email && storedUser.password === password) {
@@ -228,17 +236,13 @@ function loginUser(event) {
         return;
     }
 
-    // 🔹 If not found in localStorage, check the API
     axios.post(`${API_URL}/login`, { email, password })
         .then(response => {
             if (response.data.success) {
-                // Store user in sessionStorage for active session
                 sessionStorage.setItem("loggedInUser", JSON.stringify(response.data.user));
 
-                // 🔴 Store user data in localStorage (⚠️ Unsafe, but as requested)
                 localStorage.setItem("user", JSON.stringify(response.data.user));
 
-                // Redirect to dashboard
                 window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";
             } else {
                 messageBox.textContent = "❌ Login failed: " + (response.data.message || "Incorrect credentials.");
@@ -248,7 +252,6 @@ function loginUser(event) {
             console.error("Login Error:", error);
 
             if (error.response) {
-                // Server responded with an error
                 if (error.response.status === 400) {
                     messageBox.textContent = "❌ Invalid email or password.";
                 } else if (error.response.status === 404) {
@@ -259,10 +262,8 @@ function loginUser(event) {
                     messageBox.textContent = "❌ " + error.response.data.message;
                 }
             } else if (error.request) {
-                // No response received from server
                 messageBox.textContent = "❌ No response from server. Check your internet connection.";
             } else {
-                // Other errors
                 messageBox.textContent = "❌ Login failed: " + error.message;
             }
         });
