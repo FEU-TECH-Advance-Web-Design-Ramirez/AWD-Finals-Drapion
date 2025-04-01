@@ -188,3 +188,8 @@ function gotoDate() {
       alert("Invalid Date");
   }
 }
+function getActiveDay(date) {
+  const day = new Date(year, month, date);
+  journalDay.innerHTML = day.toString().split(" ")[0];
+  journalDate.innerHTML = `${date} ${months[month]} ${year}`;
+  }
