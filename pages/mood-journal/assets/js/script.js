@@ -18,17 +18,31 @@ const calendar = document.querySelector(".calendar"),
   todayBtn = document.querySelector(".today-btn"),
   gotoBtn = document.querySelector(".goto-btn"),
   dateInput = document.querySelector(".date-input");
+  journalDay = document.querySelector(".journal-day"),
+  journalDate = document.querySelector(".journal-date"),
+  journalsContainer = document.querySelector(".journals"),
+  addEntryBtn = document.querySelector(".add-entry"),
+  addJournalWrapper = document.querySelector(".add-journal-wrapper"),
+  addJournalCloseBtn = document.querySelector(".close-journal-btn"),
+  addJournalTitle = document.querySelector(".journal-name"),
+  addJournalContent = document.querySelector(".journal-text"),
+  addJournalSubmit = document.querySelector(".save-journal-btn");
 
 // Variables
 let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+let selectedJournal = null;
+let selectedMood = "";
 
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+
+const eventsArr = [];
+getEntries();
 
 // Initialize Calendar
 initCalendar();
@@ -39,6 +53,32 @@ next.addEventListener("click", nextMonth);
 todayBtn.addEventListener("click", goToToday);
 gotoBtn.addEventListener("click", gotoDate);
 dateInput.addEventListener("input", formatDateInput);
+document.addEventListener("DOMContentLoaded", () => {
+  addJournalWrapper.classList.remove("active"); // Ensure journal wrapper is hidden on load
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const emojiIcons = document.querySelectorAll(".emoji-icon");
+  emojiIcons.forEach((emoji) => {
+    emoji.addEventListener("click", function () {
+        selectedMood = emoji.alt.toLowerCase().replace(" emoji", ""); 
+        highlightSelectedMood(emoji);
+        console.log("Selected Mood:", selectedMood); 
+    });
+  });
+  });
+
+  addEntryBtn.addEventListener("click", () => {
+    addJournalWrapper.classList.add("active"); // Show the journal wrapper
+    });
+    
+  addJournalCloseBtn.addEventListener("click", () => {
+  addJournalWrapper.classList.remove("active"); // Hide the journal wrapper
+    });
+
+    addJournalSubmit.addEventListener("click", saveJournalEntry);
+    journalsContainer.addEventListener("click", handleJournalClick);
+    
 
 // Functions
 function initCalendar() {
