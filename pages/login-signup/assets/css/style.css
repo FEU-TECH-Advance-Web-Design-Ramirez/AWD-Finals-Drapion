@@ -573,21 +573,39 @@
   padding: 4rem 1rem;
 }
 
-.sml-container {
-  max-width: 500px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
+.sml-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
+.sml-container {
+  max-width: 500px;
+  background-color: #f4f8fd1a;
+  backdrop-filter: blur(3px);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
 
 .sml-wrapper {
   width: 400px;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 .sml-title-text {
@@ -604,7 +622,7 @@
 .sml-slide-controls label {
   cursor: pointer;
   padding: 5px 15px;
-  background: #007bff;
+  background: #274C77;
   color: #fff;
   border-radius: 5px;
 }
@@ -617,14 +635,23 @@
   display: none;
 }
 .sml-btn {
-  width: 100%;
-  background: #007bff;
+  width: 120px;
+  background: #274C77;
   border: none;
   padding: 10px;
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
 }
 .sml-btn:hover {
-  background: #0056b3;
+  background: #89A8B2;
+}
+
+.text-end{
+  text-align: left !important;
+  color: #F1F0E8;
+}
+
+.sml-section a{
+  color: #F1F0E8;
 }

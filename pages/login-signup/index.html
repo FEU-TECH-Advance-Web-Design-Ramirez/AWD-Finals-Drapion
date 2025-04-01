@@ -129,20 +129,19 @@
          <div class="sml-form-container">
              <!-- Login Form -->
              <div id="sml-login-form">
-                 <input type="email" class="form-control" placeholder="Email Address" required>
-                 <input type="password" class="form-control" placeholder="Password" required>
+                 <input type="email" id="login-email" placeholder="Email Address" required>
+                 <input type="password" id="login-password" placeholder="Password" required>
                  <a href="#" class="d-block text-end">Forgot password?</a>
-                 <button class="sml-btn">Login</button>
+                 <button class="sml-btn" type="submit">Login</button>
                  <p>Not a member? <a href="#" onclick="toggleSmlForm('signup')">Signup now</a></p>
              </div>
  
              <!-- Signup Form -->
              <div id="sml-signup-form" class="sml-hidden">
-                 <input type="text" class="form-control" placeholder="Full Name" required>
-                 <input type="email" class="form-control" placeholder="Email Address" required>
-                 <input type="password" class="form-control" placeholder="Password" required>
-                 <input type="password" class="form-control" placeholder="Confirm Password" required>
-                 <button class="sml-btn">Signup</button>
+                 <input type="text" placeholder="Full Name">
+                 <input type="email" id="signup-email" placeholder="Email Address" required>
+                 <input type="password" id="signup-password" placeholder="Password" required>
+                 <button class="sml-btn" type="submit">Signup</button>
                  <p>Already have an account? <a href="#" onclick="toggleSmlForm('login')">Login</a></p>
              </div>
          </div>
