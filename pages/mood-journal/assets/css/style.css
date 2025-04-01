@@ -681,7 +681,34 @@ body::before
     border: 3px solid #274C77; 
     border-radius: 50%;
     padding: 5px;
+  }
+
+  /* Add Entry Button */
+.add-entry {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #878895;
+  border: 2px solid #878895;
+  opacity: 0.5;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
 }
+
+.add-entry:hover {
+  opacity: 1;
+}
+  .add-entry i {
+    pointer-events: none;
+  }
+
 
   /* ====== Footer ====== */
 
