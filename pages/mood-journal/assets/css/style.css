@@ -786,6 +786,33 @@ body::before
   border-radius: 5px;
   resize: none; 
 }
+
+/* Journal Footer */
+.add-journal-footer {
+  display: flex;
+  justify-content: space-between; 
+  gap: 10px; 
+}
+
+.close-journal-btn, .save-journal-btn {
+  width: 48%; 
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.close-journal-btn {
+  background: #ccc;
+  color: #000;
+}
+
+.save-journal-btn {
+  background: #007bff;
+  color: #fff;
+}
+
   /* ====== Footer ====== */
 
 .footer {
