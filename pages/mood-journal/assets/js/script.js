@@ -354,3 +354,51 @@ addEntryBtn.addEventListener("click", () => {
   
   addJournalWrapper.classList.add("active");
   });
+
+  
+// Handle journal click
+function handleJournalClick(e) {
+  if (e.target.closest(".journal")) {
+      const journalElement = e.target.closest(".journal");
+      const entryTitle = journalElement.querySelector(".journal-title").innerText;
+      const entryTime = journalElement.querySelector(".event-time").innerText;
+  
+      eventsArr.forEach((journal) => {
+          if (journal.day === activeDay && journal.month === month + 1 && journal.year === year) {
+              selectedJournal = journal.journals.find(
+                  (entry) => entry.title === entryTitle && entry.time === entryTime
+              );
+  
+              if (selectedJournal) {
+                  addJournalTitle.value = selectedJournal.title;
+                  addJournalContent.value = selectedJournal.content;
+                  selectedMood = selectedJournal.mood; 
+                  highlightSelectedMood(); 
+                  addJournalWrapper.classList.add("active");
+              }
+          }
+      });
+  }
+  }
+  
+  // Save entries to localStorage
+  function saveEntries() {
+  localStorage.setItem("events", JSON.stringify(eventsArr));
+  }
+  
+  // Retrieve entries from localStorage
+  function getEntries() {
+  const storedEntries = localStorage.getItem("events");
+  if (storedEntries) {
+    eventsArr.push(...JSON.parse(storedEntries));
+  }
+  }
+  
+  // Convert time to 12-hour format
+  function convertTime(time) {
+  const [hour, minute] = time.split(":");
+  const timeFormat = hour >= 12 ? "PM" : "AM";
+  const formattedHour = hour % 12 || 12;
+  return `${formattedHour}:${minute} ${timeFormat}`;
+  }
+  
