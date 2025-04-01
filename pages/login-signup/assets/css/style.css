@@ -655,3 +655,9 @@
 .sml-section a{
   color: #F1F0E8;
 }
+
+#output {
+  margin-top: 20px;
+  text-align: left;
+  display: inline-block;
+}

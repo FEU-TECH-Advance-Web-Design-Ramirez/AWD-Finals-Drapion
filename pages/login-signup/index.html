@@ -138,15 +138,21 @@
  
              <!-- Signup Form -->
              <div id="sml-signup-form" class="sml-hidden">
-                 <input type="text" placeholder="Full Name">
+                 <input type="text" id="signup-name" placeholder="Full Name">
                  <input type="email" id="signup-email" placeholder="Email Address" required>
                  <input type="password" id="signup-password" placeholder="Password" required>
-                 <button class="sml-btn" type="submit">Signup</button>
+                 <button class="sml-btn" type="submit" id="submit">Signup</button>
                  <p>Already have an account? <a href="#" onclick="toggleSmlForm('login')">Login</a></p>
              </div>
          </div>
      </div>
      </div>
+    </section>
+
+    <section>
+        <button onclick="fetchUsers()">Fetch All Users</button>
+        <h2>Users List</h2>
+    <div id="output"></div>
     </section>
 
     <!-- Footer -->
