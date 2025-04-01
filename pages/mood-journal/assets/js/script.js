@@ -268,5 +268,24 @@ function getActiveDay(date) {
         journalsContainer.innerHTML = journals || `<div class="no-journal"><h3>No Entries</h3></div>`;
         saveEntries();
         applyMoodColorsToCalendar();
-        
         }
+        function highlightSelectedMood() {
+          const emojiIcons = document.querySelectorAll(".emoji-icon");
+          
+          emojiIcons.forEach((emoji) => {
+              emoji.classList.remove("selected");
+              if (emoji.alt.toLowerCase() === selectedMood) {
+                  emoji.classList.add("selected");
+              }
+          });
+          }
+         function getMoodColor(mood) {
+          const moodColors = {
+              "glad": "#00a8a8",
+               "happy": "#9dcd5a",
+               "disappointed": "#76b9f0",
+              "sad": "#e39751",
+              "mad": "#c4391d"
+          };
+          return moodColors[mood] || "#E5E1DA"; 
+          }
