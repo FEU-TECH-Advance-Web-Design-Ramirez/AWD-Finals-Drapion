@@ -193,3 +193,80 @@ function getActiveDay(date) {
   journalDay.innerHTML = day.toString().split(" ")[0];
   journalDate.innerHTML = `${date} ${months[month]} ${year}`;
   }
+
+  function applyMoodColorsToCalendar() {
+    document.querySelectorAll(".calendar-day").forEach(day => {
+        const dayNumber = parseInt(day.innerText);
+        const currentMonth = month + 1;
+        const currentYear = year;
+    
+        const entry = eventsArr.find(event =>
+            event.day === dayNumber &&
+            event.month === currentMonth &&
+            event.year === currentYear
+        );
+    
+        if (entry && entry.journals.length > 0) {
+            const moodColor = getMoodColor(entry.journals[0].mood);
+            day.style.backgroundColor = moodColor;
+            console.log(`Applied ${moodColor} to day ${dayNumber}`); // for debugging
+        } else {
+            day.style.backgroundColor = "";
+        }
+    });
+    }
+
+    function updateJournals(day) {
+      const journalEntry = eventsArr.find(event => event.day === day && event.month === month + 1 && event.year === year);
+      
+      if (journalEntry && journalEntry.journals.length > 0) {
+          selectedJournal = journalEntry.journals[0];
+      
+          addJournalTitle.value = selectedJournal.title;
+          addJournalContent.value = selectedJournal.content;
+          selectedMood = selectedJournal.mood; 
+      
+          document.querySelectorAll(".emoji-icon").forEach((emoji) => {
+              if (emoji.getAttribute("alt").toLowerCase() === selectedMood) {
+                  highlightSelectedMood(emoji);
+              }
+          });
+      } else {
+          selectedJournal = null;
+      }
+      }
+
+      function updateJournals(date) {
+        let journals = "";
+        eventsArr.forEach((journal) => {
+            if (journal.day === date && journal.month === month + 1 && journal.year === year) {
+                journal.journals.forEach((entry) => {
+                    // mood colors
+                    let moodColors = {
+                        "glad": "#00a8a8",
+                        "happy": "#9dcd5a",
+                        "disappointed": "#76b9f0",
+                        "sad": "#e39751",
+                        "mad": "#c4391d"
+                    };
+        
+                    let moodColor = moodColors[entry.mood] || "#e6e6e6";
+        
+                    journals += `<div class="journal" style="background-color: ${moodColor}; border-radius: 8px; padding: 10px; margin: 5px 0; color: #fff;">
+                        <div class="journal-title">
+                            <i class="fas fa-circle"></i>
+                            <h3 class="journal-title">${entry.title}</h3>
+                        </div>
+                        <div class="journal-time">
+                            <span class="event-time">${entry.time}</span>
+                        </div>
+                    </div>`;
+                });
+            }
+        });
+        
+        journalsContainer.innerHTML = journals || `<div class="no-journal"><h3>No Entries</h3></div>`;
+        saveEntries();
+        applyMoodColorsToCalendar();
+        
+        }
