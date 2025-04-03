@@ -324,3 +324,34 @@
     }
   }
   
+  .dual-color-box {
+    background: linear-gradient(to bottom, #6096BA 50%, #ffffff 50%);
+    color: rgb(255, 255, 255);
+    margin-bottom: 400px;
+  }
+  
+  .dual-color-box h2 {
+  padding-top: 30px;
+    color: #274C77 !important;
+  }
+  
+  .dual-color-box p {
+    color: #274C77 !important;
+    text-align: center;
+    margin: auto;
+    padding-top: 3px !important;
+    max-width: 110%;
+  }
+  
+  h1 {
+  padding-top: 370px !important;
+  
+  }
+  
+  h2 {
+  color: #1d3557;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  padding-top: 15px !important;
+  }
