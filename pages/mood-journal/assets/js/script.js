@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const emojiIcons = document.querySelectorAll(".emoji-icon");
   emojiIcons.forEach((emoji) => {
-    emoji.addEventListener("click", function () {
-        selectedMood = emoji.alt.toLowerCase().replace(" emoji", ""); 
-        highlightSelectedMood(emoji);
-        console.log("Selected Mood:", selectedMood); 
-    });
-  });
+      emoji.addEventListener("click", function () {
+          selectedMood = emoji.alt.toLowerCase().replace(" emoji", ""); 
+          highlightSelectedMood(emoji); 
+          console.log("Selected Mood:", selectedMood); // for debugging
+      });
+  })
 
   addEntryBtn.addEventListener("click", () => {
     addJournalWrapper.classList.add("active"); // Show the journal wrapper
@@ -249,31 +249,32 @@ function getActiveDay(date) {
     }
 
     function updateJournals(day) {
-      const journalEntry = eventsArr.find(event => event.day === day && event.month === month + 1 && event.year === year);
-      
-      if (journalEntry && journalEntry.journals.length > 0) {
-          selectedJournal = journalEntry.journals[0];
-      
-          addJournalTitle.value = selectedJournal.title;
-          addJournalContent.value = selectedJournal.content;
-          selectedMood = selectedJournal.mood; 
-      
-          document.querySelectorAll(".emoji-icon").forEach((emoji) => {
-              if (emoji.getAttribute("alt").toLowerCase() === selectedMood) {
-                  highlightSelectedMood(emoji);
-              }
-          });
-      } else {
-          selectedJournal = null;
-      }
-      }
-
-      function updateJournals(date) {
+        const journalEntry = eventsArr.find(event => event.day === day && event.month === month + 1 && event.year === year);
+    
+        // Update the journal fields (title, content, mood)
+        if (journalEntry && journalEntry.journals.length > 0) {
+            selectedJournal = journalEntry.journals[0];
+    
+            addJournalTitle.value = selectedJournal.title;
+            addJournalContent.value = selectedJournal.content;
+            selectedMood = selectedJournal.mood;
+    
+            // Highlight the selected mood emoji
+            document.querySelectorAll(".emoji-icon").forEach((emoji) => {
+                if (emoji.getAttribute("alt").toLowerCase() === selectedMood) {
+                    highlightSelectedMood(emoji);
+                }
+            });
+        } else {
+            selectedJournal = null;
+        }
+    
+        // Update the journal entries container
         let journals = "";
         eventsArr.forEach((journal) => {
-            if (journal.day === date && journal.month === month + 1 && journal.year === year) {
+            if (journal.day === day && journal.month === month + 1 && journal.year === year) {
                 journal.journals.forEach((entry) => {
-                    // mood colors
+                    // Define mood colors
                     let moodColors = {
                         "glad": "#00a8a8",
                         "happy": "#9dcd5a",
@@ -281,36 +282,38 @@ function getActiveDay(date) {
                         "sad": "#e39751",
                         "mad": "#c4391d"
                     };
-        
+    
                     let moodColor = moodColors[entry.mood] || "#e6e6e6";
-        
+    
+                    // Create the journal entry HTML
                     journals += `<div class="journal" style="background-color: ${moodColor}; border-radius: 8px; padding: 10px; margin: 5px 0; color: #fff;">
-                        <div class="journal-title">
-                            <i class="fas fa-circle"></i>
-                            <h3 class="journal-title">${entry.title}</h3>
-                        </div>
-                        <div class="journal-time">
-                            <span class="event-time">${entry.time}</span>
-                        </div>
-                    </div>`;
+                                    <div class="journal-title">
+                                        <i class="fas fa-circle"></i>
+                                        <h3 class="journal-title">${entry.title}</h3>
+                                    </div>
+                                    <div class="journal-time">
+                                        <span class="event-time">${entry.time}</span>
+                                    </div>
+                                </div>`;
                 });
             }
         });
-        
+    
+        // Update the journal container
         journalsContainer.innerHTML = journals || `<div class="no-journal"><h3>No Entries</h3></div>`;
+        
         saveEntries();
         applyMoodColorsToCalendar();
-        }
+    }
+    
         function highlightSelectedMood() {
-          const emojiIcons = document.querySelectorAll(".emoji-icon");
-          
-          emojiIcons.forEach((emoji) => {
-              emoji.classList.remove("selected");
-              if (emoji.alt.toLowerCase() === selectedMood) {
-                  emoji.classList.add("selected");
-              }
-          });
-          }
+            document.querySelectorAll(".emoji-icon").forEach((emoji) => {
+                emoji.classList.remove("selected");
+                if (emoji.alt.toLowerCase().replace(" emoji", "") === selectedMood) {
+                    emoji.classList.add("selected");
+                }
+            });
+        }
          function getMoodColor(mood) {
           const moodColors = {
               "glad": "#00a8a8",
