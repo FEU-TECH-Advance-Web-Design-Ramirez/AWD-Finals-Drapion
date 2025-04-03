@@ -344,7 +344,7 @@
   }
   
   h1 {
-  padding-top: 370px !important;
+  padding-top: 1800px !important;
   
   }
   
@@ -354,4 +354,57 @@
   margin-bottom: 50px;
   padding-bottom: 10px;
   padding-top: 15px !important;
+  }
+
+  h5.question {
+    color: #1d3557;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin to bring the question closer to the circles */
+    text-align: center;
+    margin-top: 10px;
+    }
+
+  .scale-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 120px;
+    margin-top: 30px;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    border: 3px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Different circle sizes and border colors */
+  .circle-1 { width: 50px; height: 50px; border-color: green;}
+  .circle-2 { width: 40px; height: 40px; border-color: green;}
+  .circle-3 { width: 30px; height: 30px; border-color: green;}
+  .circle-4 { width: 20px; height: 20px; border-color: grey;}
+  .circle-5 { width: 25px; height: 25px; border-color: purple;}
+  .circle-6 { width: 35px; height: 35px; border-color: purple;}
+  .circle-7 { width: 50px; height: 50px; border-color: purple;}
+  
+  .label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .agree {
+    color: green;
+    margin-right: 15px;
+  }
+  
+  .disagree {
+    color: purple;
+    margin-left: 15px;
   }
