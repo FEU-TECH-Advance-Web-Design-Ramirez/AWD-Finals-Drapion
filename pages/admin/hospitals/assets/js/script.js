@@ -208,3 +208,10 @@ function selectHospital(index, name, location, type) {
 function saveSelectedHospitals() {
   localStorage.setItem("selectedHospitals", JSON.stringify(selectedHospitals));
 }
+
+// Load selected hospitals from localStorage
+function loadSelectedHospitals() {
+  const savedHospitals = localStorage.getItem("selectedHospitals");
+  selectedHospitals = savedHospitals ? JSON.parse(savedHospitals) : [];
+  displaySelectedHospitals();
+}
