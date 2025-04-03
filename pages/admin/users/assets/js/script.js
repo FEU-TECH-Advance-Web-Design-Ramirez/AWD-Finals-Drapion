@@ -85,7 +85,7 @@ function signupUser(event) {
         headers: { "Content-Type": "application/json" }
     })
     .then(response => {
-        messageBox.textContent = "✅ Account created! Redirecting to login...";
+        messageBox.textContent = "✅ Account created!";
         
         localStorage.setItem("user", JSON.stringify({ name, email, password }));
 
@@ -93,7 +93,6 @@ function signupUser(event) {
         
         setTimeout(() => {
             fetchUsers(); // Delay fetching users
-            window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html";
         }, 1500);
     })
     .catch(error => {
@@ -209,13 +208,12 @@ function signupUser(event) {
         headers: { "Content-Type": "application/json" }
     })
     .then(response => {
-        messageBox.textContent = "✅ Account created! Redirecting to login...";
+        messageBox.textContent = "✅ Account created!";
         
         // 🔴 Store user data in localStorage (⚠️ Unsafe)
         localStorage.setItem("user", JSON.stringify({ name, email, password }));
 
         document.getElementById("createUserForm").reset();
-        setTimeout(() => window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html", 1500);
     })
     .catch(error => {
         console.error("Signup Error:", error.response ? error.response.data : error.message);
