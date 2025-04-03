@@ -203,3 +203,8 @@ function selectHospital(index, name, location, type) {
   alert("✅ Hospital selected for appointment!");
   displaySelectedHospitals();
 }
+
+// Save selected hospitals to localStorage
+function saveSelectedHospitals() {
+  localStorage.setItem("selectedHospitals", JSON.stringify(selectedHospitals));
+}
