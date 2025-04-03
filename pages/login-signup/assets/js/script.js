@@ -143,7 +143,7 @@ function loginUser(event) {
             if (response.data) {
                 sessionStorage.setItem("loggedInUser", JSON.stringify(response.data));
                 document.getElementById("loginUserForm").reset();  // Reset form fields after success
-                alert("Login Success");
+                messageBox.textContent = "✅ Login successful! Redirecting...";
                 window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";  // Redirect to dashboard
             } else {
                 messageBox.textContent = "❌ Login failed: Invalid email.";
