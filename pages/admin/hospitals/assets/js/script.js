@@ -318,3 +318,20 @@ const locationData = {
       "Bohol": ["Tagbilaran", "Ubay"]
   }
 };
+
+document.getElementById("facilityRegion").addEventListener("change", function() {
+  const region = this.value;
+  const provinceSelect = document.getElementById("facilityProvince");
+  const citySelect = document.getElementById("facilityCity");
+  provinceSelect.innerHTML = '<option value="">Select Province</option>';
+  citySelect.innerHTML = '<option value="">Select City</option>';
+  
+  if (region && locationData[region]) {
+      Object.keys(locationData[region]).forEach(province => {
+          let option = document.createElement("option");
+          option.value = province;
+          option.textContent = province;
+          provinceSelect.appendChild(option);
+      });
+  }
+});
