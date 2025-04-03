@@ -135,3 +135,21 @@ function searchFacilities() {
               .catch(err => console.error("Fallback Error Fetching All Facilities:", err));
       });
 }
+
+// Display Search Results
+function displaySearchResults(results) {
+  const list = document.getElementById("searchResults");
+  list.innerHTML = "";
+
+  if (results.length === 0) {
+      list.innerHTML = "<li class='list-group-item text-danger'>No results found.</li>";
+      return;
+  }
+
+  results.forEach(facility => {
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = `${facility.name} - ${facility.location} (${facility.type})`;
+      list.appendChild(li);
+  });
+}
