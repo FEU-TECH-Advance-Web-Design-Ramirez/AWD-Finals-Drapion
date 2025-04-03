@@ -325,7 +325,7 @@
   }
   
   .dual-color-box {
-    background: linear-gradient(to bottom, #6096BA 50%, #ffffff 50%);
+    background: linear-gradient(to bottom, #6096BA 50%, #F1F0E8 50%);
     color: rgb(255, 255, 255);
     margin-bottom: 400px;
   }
@@ -345,6 +345,7 @@
   
   h1 {
   padding-top: 3680px !important;
+  color: #F1F0E8;
   
   }
   

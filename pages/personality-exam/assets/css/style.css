@@ -242,7 +242,7 @@
 }
 
 .hero-stats-desc{
-  color: #F1F0E8;
+  color: #E5E1DA;
 }
 
 .hero-section img {
@@ -326,8 +326,8 @@
 
 
 .dual-color-box {
-  background: linear-gradient(to bottom, #6096BA 50%, #ffffff 50%);
-  color: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, #6096BA 50%, #F1F0E8 50%);
+  color: #ffffff;
   margin-bottom: 400px;
 }
 
@@ -346,6 +346,7 @@ padding-top: 30px;
 
 h1 {
 padding-top: 3680px !important;
+color: #F1F0E8;
 
 }
 
@@ -488,8 +489,9 @@ margin-top: 10px;
 
 .footer {
     background-color: #89A8B2;
-    padding: 0;
+    padding: 0px;
     overflow-y: auto;
+
   }
   
   .footer img {
