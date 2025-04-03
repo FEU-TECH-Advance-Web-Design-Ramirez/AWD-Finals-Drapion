@@ -132,7 +132,7 @@ function loginUser(event) {
     // Admin login check
     if (email === adminEmail && password === adminPassword) {
         sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
-        window.location.href = "/AWD-Finals-Drapion/pages/admin/users/index.html";  // Redirect to admin panel
+        window.location.href = "/AWD-Finals-Drapion/pages/admin/users/index.html";
         return;
     }
 
@@ -142,8 +142,8 @@ function loginUser(event) {
         .then(response => {
             if (response.data) {
                 sessionStorage.setItem("loggedInUser", JSON.stringify(response.data));
-                document.getElementById("loginUserForm").reset();  // Reset form fields after success
                 messageBox.textContent = "✅ Login successful! Redirecting...";
+                document.getElementById("loginUserForm").reset();  // Reset form fields after success
                 window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";  // Redirect to dashboard
             } else {
                 messageBox.textContent = "❌ Login failed: Invalid email.";
