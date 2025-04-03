@@ -388,6 +388,26 @@ audio {
   text-align: center;
   margin-bottom: 20px;
   }
+  
+/* EXPERIENCE BUTTONS */
+.experience-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 50px;
+  background: #F3F1EB;
+  color: #1F3B5C;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  }
+  
+  .experience-btn:hover {
+  background: #E8E4E1;
+  }
 
   /* ====== Footer ====== */
 
