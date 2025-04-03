@@ -250,7 +250,7 @@ body::before
   }
 
   /* Calendar Styles */
-  .container .left {
+  .journal-container .left {
     width: 50%; 
     padding: 10px;
     display: flex;
