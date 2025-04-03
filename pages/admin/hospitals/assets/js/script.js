@@ -24,4 +24,16 @@ document.getElementById("registerFacilityForm").addEventListener("submit", funct
   const city = document.getElementById("facilityCity").value;
   const contactInfo = document.getElementById("facilityContact").value;
   const type = document.getElementById("facilityType").value;
+
+  if (!city || !province || !region) {
+    document.getElementById("registerFacilityMessage").textContent = "❌ Please select a valid location!";
+    document.getElementById("registerFacilityMessage").style.color = "red";
+    return;
+}
+
+if (!type) {
+    document.getElementById("registerFacilityMessage").textContent = "❌ Please select a facility type!";
+    document.getElementById("registerFacilityMessage").style.color = "red";
+    return;
+}
 });
