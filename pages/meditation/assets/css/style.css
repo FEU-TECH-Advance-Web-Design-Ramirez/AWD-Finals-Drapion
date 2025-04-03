@@ -207,7 +207,7 @@
 
   /* ====== Hero Section ====== */
 .hero-section {
-  background: url('/assets/img/MeditationBg1.png') no-repeat center center;
+  background: url('/pages/meditation/assets/img/MeditationBg1.png') no-repeat center center;
   background-size: cover;
   width: 100vw;
   height: 100vh;
