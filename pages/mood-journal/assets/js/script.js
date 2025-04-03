@@ -339,21 +339,26 @@ function saveJournalEntry() {
     );
 
     if (journalIndex !== -1) {
-        alert("Your journal entry for today has already been recorded.");
-        return;
-    }
-
-    eventsArr.push({
-        day: activeDay,
-        month: month + 1,
-        year,
-        journals: [{
+        eventsArr[journalIndex].journals[0] = {
             title,
             content,
-            mood: selectedMood, 
+            mood: selectedMood,
             time: new Date().toLocaleTimeString()
-        }],
-    });
+        };
+    } else {
+        eventsArr.push({
+            day: activeDay,
+            month: month + 1,
+            year,
+            journals: [{
+                title,
+                content,
+                mood: selectedMood,
+                time: new Date().toLocaleTimeString()
+            }],
+        });
+    }
+    
 
     saveEntries();
     updateJournals(activeDay); // Refresh UI after saving
