@@ -73,25 +73,34 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchUsers(); // Automatically fetch users when the page loads
 });
 
-document.getElementById("createUserForm").addEventListener("submit", function(event) {
+function signupUser(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const messageBox = document.getElementById("createUserMessage");
 
-    axios.post(`${API_URL}`, { name, email, password }, {
+    axios.post(API_URL, { name, email, password }, {
         headers: { "Content-Type": "application/json" }
     })
     .then(response => {
-        document.getElementById("createUserMessage").textContent = "✅ User created successfully!";
+        messageBox.textContent = "✅ Account created! Redirecting to login...";
+        
+        localStorage.setItem("user", JSON.stringify({ name, email, password }));
+
         document.getElementById("createUserForm").reset();
+        
+        setTimeout(() => {
+            fetchUsers(); // Delay fetching users
+            window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html";
+        }, 1500);
     })
     .catch(error => {
-        console.error("Error creating user:", error.response ? error.response.data : error.message);
-        document.getElementById("createUserMessage").textContent = "❌ Error: " + (error.response ? error.response.data.error : "Unknown error");
+        console.error("Signup Error:", error.response ? error.response.data : error.message);
+        messageBox.textContent = "❌ Signup failed: " + (error.response ? error.response.data.error : "Unknown error");
     });
-});
+}
 
 function fetchUsers() {
     axios.get(API_URL)
@@ -113,7 +122,6 @@ function fetchUsers() {
         });
 }
 
-
 function fetchUserByEmail() {
     const email = document.getElementById("searchEmail").value.trim().toLowerCase();
     const messageBox = document.getElementById("fetchUserMessage");
@@ -123,12 +131,14 @@ function fetchUserByEmail() {
         return;
     }
 
-    axios.get(`${API_URL}?email=${email}`)
+    axios.get(API_URL)
         .then(response => {
-            if (response.data.length === 0) {
+            const users = response.data;
+            const user = users.find(user => user.email.toLowerCase() === email);
+
+            if (!user) {
                 messageBox.textContent = "❌ User not found.";
             } else {
-                const user = response.data[0]; // Assuming API returns an array of matches
                 messageBox.textContent = `✅ User Found: ${user.name} (ID: ${user.id}, Email: ${user.email})`;
             }
         })
