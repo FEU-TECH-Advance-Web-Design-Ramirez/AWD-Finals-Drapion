@@ -185,3 +185,21 @@ function displayHospitalsToPick(hospitals) {
       list.appendChild(li);
   });
 }
+
+// Select a hospital and store it in localStorage
+function selectHospital(index, name, location, type) {
+  if (!selectedHospitals) {
+      selectedHospitals = [];
+  }
+
+  if (selectedHospitals.some(hospital => hospital.name === name && hospital.location === location)) {
+      alert("❌ This hospital is already selected!");
+      return;
+  }
+
+  selectedHospitals.push({ name, location, type });
+
+  saveSelectedHospitals();
+  alert("✅ Hospital selected for appointment!");
+  displaySelectedHospitals();
+}
