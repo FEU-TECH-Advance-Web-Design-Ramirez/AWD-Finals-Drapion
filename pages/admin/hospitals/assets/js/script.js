@@ -219,3 +219,20 @@ function loadSelectedHospitals() {
 // Call fetchAndDisplayHospitals on page load
 fetchAndDisplayHospitals();
 loadSelectedHospitals();
+
+// Display selected hospitals in the appointment list
+function displaySelectedHospitals() {
+  const list = document.getElementById("selectedHospitalsList");
+  list.innerHTML = ""; // Clear the list before rendering
+
+  selectedHospitals.forEach(function (hospital, index) {
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+      li.innerHTML = `
+          <span>${hospital.name} - ${hospital.location} (${hospital.type})</span>
+          <button class="btn btn-warning btn-sm" onclick="editHospital(${index})">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteHospital(${index})">Delete</button>
+      `;
+      list.appendChild(li);
+  });
+}
