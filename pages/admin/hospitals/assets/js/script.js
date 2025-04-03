@@ -16,5 +16,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Register Facility
 document.getElementById("registerFacilityForm").addEventListener("submit", function(event) {
-  
+  event.preventDefault();
 });
