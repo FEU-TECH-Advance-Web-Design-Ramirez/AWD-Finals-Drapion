@@ -56,8 +56,6 @@ dateInput.addEventListener("input", formatDateInput);
 document.addEventListener("DOMContentLoaded", () => {
   addJournalWrapper.classList.remove("active"); // Ensure journal wrapper is hidden on load
   });
-
-  document.addEventListener("DOMContentLoaded", function () {
   const emojiIcons = document.querySelectorAll(".emoji-icon");
   emojiIcons.forEach((emoji) => {
     emoji.addEventListener("click", function () {
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
         highlightSelectedMood(emoji);
         console.log("Selected Mood:", selectedMood); 
     });
-  });
   });
 
   addEntryBtn.addEventListener("click", () => {
@@ -119,7 +116,9 @@ function initCalendar() {
           "mad": "#c4391d"
       };
   
-      let moodColor = journalEntry ? moodColors[journalEntry.journals[0].mood] : "";
+      let moodColor = journalEntry && journalEntry.journals.length > 0 ? 
+                moodColors[journalEntry.journals[0].mood] || "" : "";
+
   
       if (isToday) {
           activeDay = i;
@@ -159,15 +158,20 @@ function addDayListeners() {
 }
 
 function setActiveDay(day) {
-  activeDay = day;
-  const days = document.querySelectorAll(".day");
-  days.forEach((day) => day.classList.remove("active"));
-  days.forEach((day) => {
-      if (Number(day.innerHTML) === activeDay && !day.classList.contains("prev-date") && !day.classList.contains("next-date")) {
-          day.classList.add("active");
-      }
-  });
+    activeDay = day;
+    const days = document.querySelectorAll(".day");
+    
+    days.forEach((dayEl) => dayEl.classList.remove("active"));
+    days.forEach((dayEl) => {
+        if (Number(dayEl.innerHTML) === activeDay && !dayEl.classList.contains("prev-date") && !dayEl.classList.contains("next-date")) {
+            dayEl.classList.add("active");
+        }
+    });
+
+    getActiveDay(activeDay);
+    updateJournals(activeDay); 
 }
+
 
 function prevMonth() {
   month--;
@@ -214,10 +218,13 @@ function gotoDate() {
   }
 }
 function getActiveDay(date) {
-  const day = new Date(year, month, date);
-  journalDay.innerHTML = day.toString().split(" ")[0];
-  journalDate.innerHTML = `${date} ${months[month]} ${year}`;
-  }
+    const day = new Date(year, month, date);
+    journalDay.innerHTML = day.toString().split(" ")[0];
+    journalDate.innerHTML = `${date} ${months[month]} ${year}`;
+
+    updateJournals(date); 
+}
+
 
   function applyMoodColorsToCalendar() {
     document.querySelectorAll(".calendar-day").forEach(day => {
@@ -316,55 +323,45 @@ function getActiveDay(date) {
           }
 // Save journal entry (one entry per day)
 function saveJournalEntry() {
-  const title = addJournalTitle.value.trim();
-  const content = addJournalContent.value.trim();
-  
-  if (!title || !content || !selectedMood) {
-      alert("Please fill all fields and select a mood.");
-      return;
-  }
-  
-  let entryExists = false;
-  
-  eventsArr.forEach((journal) => {
-      if (journal.day === activeDay && journal.month === month + 1 && journal.year === year) {
-          if (selectedJournal) {
-              selectedJournal.title = title;
-              selectedJournal.content = content;
-              selectedJournal.mood = selectedMood;
-              selectedJournal.time = new Date().toLocaleTimeString();
-              alert("Journal entry updated successfully!");
-              selectedJournal = null;
-              entryExists = true;
-          } else {
-              alert("Your journal entry for today has been recorded already.");
-              entryExists = true;
-          }
-      }
-  });
-  
-  if (!entryExists) {
-      eventsArr.push({
-          day: activeDay,
-          month: month + 1,
-          year,
-          journals: [{
-              title,
-              content,
-              mood: selectedMood, 
-              time: new Date().toLocaleTimeString()
-          }],
-      });
-      alert("Journal entry saved successfully!");
-  }
-  
-  saveEntries(); 
-  updateJournals(activeDay);
-  applyMoodColorsToCalendar(); 
-  addJournalWrapper.classList.remove("active");
-  addJournalTitle.value = "";
-  addJournalContent.value = "";
-  }
+    const title = addJournalTitle.value.trim();
+    const content = addJournalContent.value.trim();
+    
+    if (!title || !content || !selectedMood) {
+        alert("Please fill all fields and select a mood.");
+        return;
+    }
+
+    let journalIndex = eventsArr.findIndex(journal => 
+        journal.day === activeDay && journal.month === month + 1 && journal.year === year
+    );
+
+    if (journalIndex !== -1) {
+        alert("Your journal entry for today has already been recorded.");
+        return;
+    }
+
+    eventsArr.push({
+        day: activeDay,
+        month: month + 1,
+        year,
+        journals: [{
+            title,
+            content,
+            mood: selectedMood, 
+            time: new Date().toLocaleTimeString()
+        }],
+    });
+
+    saveEntries();
+    updateJournals(activeDay); // Refresh UI after saving
+
+    addJournalWrapper.classList.remove("active");
+    addJournalTitle.value = "";
+    addJournalContent.value = "";
+}
+
+
+
 
   // Prevents opening the journal entry form again if an entry exists
 addEntryBtn.addEventListener("click", () => {
