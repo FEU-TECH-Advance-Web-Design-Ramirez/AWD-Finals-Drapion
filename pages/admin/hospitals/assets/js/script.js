@@ -1,7 +1,6 @@
 const API_URL = "https://demo-api-skills.vercel.app/api/MentalWellness/hospitals";
 const SEARCH_API_URL = "https://demo-api-skills.vercel.app/api/MentalWellness/hospitals/search";
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     const navLinks = document.querySelectorAll(".nav-link");
@@ -14,4 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+// Register Facility
+document.getElementById("registerFacilityForm").addEventListener("submit", function(event) {
   
+});
