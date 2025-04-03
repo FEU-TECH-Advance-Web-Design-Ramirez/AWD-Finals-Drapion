@@ -473,7 +473,7 @@
   max-width: 350px;
   padding: 1.5rem;
   border-radius: 12px;
-  background: #E8E5DF;
+  background: #F1F0E8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 1.5rem;
 }
@@ -714,4 +714,10 @@
 .card{
   width: min(800px, 90%);
   border-radius: 30px;
+  align-items: center;
+  background-color: #E8E5DF;
+}
+
+.gd-section{
+  background-color: #F1F0E8;
 }
