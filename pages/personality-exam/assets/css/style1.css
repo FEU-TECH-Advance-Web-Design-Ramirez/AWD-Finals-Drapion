@@ -1,0 +1,560 @@
+*{
+    font-family: Poppins, sans-serif;
+  }
+  
+  /* ====== Navigation Bar ====== */
+    
+  .navbar {
+    background-color: transparent;
+    height: 80px;
+    padding: 0.5rem;
+  }
+  
+  .navbar-img {
+    height: auto;
+    width: auto;
+    max-height: 40px;
+    min-height: 30px;
+    margin-right: 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-weight: 500;
+    color: #00b0dc;
+    font-size: 24px;
+    transition: 0.3s color;
+    width: 10%;
+  }
+   
+  .navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  .navbar.scrolled {
+    background-color: #89A8B2 !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .navbar.scrolled .nav-link {
+    color: #F1F0E8 !important;
+  }
+  
+  .navbar.scrolled .nav-link.active {
+    color: #274C77 !important;
+  }
+  
+  .navbar.scrolled .nav-link:hover, 
+  .navbar.scrolled .nav-link.active:hover {
+    color: #274C77 !important;
+  }
+  
+  .nav-link {
+    color: #F1F0E8 !important;
+    font-weight: 500 !important;
+    position: relative !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease-in-out !important;
+  }
+  
+  .navbar-nav .nav-link.active{
+    color: #B3C8CF !important;
+  }
+  
+  .nav-link:hover, .nav-link.active:hover {
+    color: #B3C8CF !important; 
+  }
+  
+  .nav-link.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .nav-link.dropdown-toggle span:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    background-color: #F1F0E8;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:not(.dropdown-toggle):hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    background-color: #F1F0E8;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .offcanvas{
+    background-color: #89A8B2;
+  }
+  
+  @media (min-width: 991px) {
+    .nav-link:hover::before, .nav-link.active:hover::before {
+        width: 100%;
+        visibility: visible;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .navbar {
+        padding: 0.5rem 0.5rem;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-brand {
+        padding: 0;
+        margin-right: 0.5rem;
+        font-size: 18px;
+    }
+    .navbar-brand img {
+        height: 15px;
+        width: auto;
+    }
+    .navbar-toggler {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        position: relative;
+        top: 5px;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.3rem 0;
+    }
+  
+    .nav-link:hover::after {
+      background-image: linear-gradient(to right, #F1F0E8, #F1F0E8);
+  }
+  
+    .offcanvas-header {
+        padding: 0.5rem 1rem;
+    }
+    .offcanvas-title img {
+        height: 50px;
+        width: auto;
+        margin-right: 0.5rem;
+    }
+    .offcanvas-body .nav-link {
+        padding: 0.25rem 0;
+    }
+    .login-button {
+        padding: 0.25rem 0.5rem;
+    }
+  }
+  
+  .offcanvas-title img {
+    height: auto;
+    width: auto;
+    max-height: 30px;
+    min-height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .offcanvas-title {
+    color: #00b0dc;
+    margin-top: 1rem;
+  }
+  .login {
+    padding: 10px 20px;
+    background-color: #274C77;
+    color: #F1F0E8;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 40px;
+    font-weight: 500;
+    padding: 7px 15px;
+    width: 120px;
+  }
+  
+  .login:hover{
+    background-color: #F1F0E8;
+    color: #274C77;
+  }
+  
+  @media (max-width: 991px) {
+    .nav-link.nav-link.active {
+        color: #274C77;
+    }
+  }
+
+
+  .hero-section {
+    background: url(../img/soulspeakPT.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #F1F0E8;
+    padding: 4rem 1rem;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #F1F0E8;
+    width: 70%;
+  }
+  
+  .hero-desc {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.6;
+    color: #d9e4ec;
+    width: 70%;
+  }
+  
+  .hero-stats-desc{
+    color: #F1F0E8;
+  }
+  
+  .hero-section img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section .card {
+    background-color: #f4f8fd1a;
+    border-radius: 15px;
+    padding: 16px 33px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+    color: #F1F0E8;
+    border: none;
+    width: 220px;
+    height: 150px;
+    justify-content: center;
+  }
+  
+  .stats-group {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-group {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .hero-section .card {
+      width: -50%;
+      height: -50%;
+    }
+  }
+  
+  .hero-section .card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6096BA;
+  }
+  
+  @media (max-width: 767px) {
+    .stats-group {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .hero-heading {
+      font-size: 2rem;
+    }
+  
+    .hero-desc {
+      font-size: 1rem;
+    }
+  
+    .hero-section {
+      height: auto;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .hero-heading {
+      font-size: 1.8rem;
+    }
+  
+    .hero-desc {
+      font-size: 0.9rem;
+    }
+  
+    .hero-section img {
+      max-width: 90%;
+      position: relative;
+      padding-bottom: 250px;
+    }
+  }
+  
+  .dual-color-box {
+    background: linear-gradient(to bottom, #6096BA 50%, #ffffff 50%);
+    color: rgb(255, 255, 255);
+    margin-bottom: 400px;
+  }
+  
+  .dual-color-box h2 {
+  padding-top: 30px;
+    color: #274C77 !important;
+  }
+  
+  .dual-color-box p {
+    color: #274C77 !important;
+    text-align: center;
+    margin: auto;
+    padding-top: 3px !important;
+    max-width: 110%;
+  }
+  
+  h1 {
+  padding-top: 3680px !important;
+  
+  }
+  
+  h2 {
+  color: #1d3557;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  padding-top: 15px !important;
+  }
+
+  h5.question {
+    color: #1d3557;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin to bring the question closer to the circles */
+    text-align: center;
+    margin-top: 10px;
+    }
+
+  .scale-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 120px;
+    margin-top: 30px;
+  }
+  
+  .circle {
+    border-radius: 50%;
+    border: 3px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Different circle sizes and border colors */
+  .circle-1 { width: 50px; height: 50px; border-color: green;}
+  .circle-2 { width: 40px; height: 40px; border-color: green;}
+  .circle-3 { width: 30px; height: 30px; border-color: green;}
+  .circle-4 { width: 20px; height: 20px; border-color: grey;}
+  .circle-5 { width: 25px; height: 25px; border-color: purple;}
+  .circle-6 { width: 35px; height: 35px; border-color: purple;}
+  .circle-7 { width: 50px; height: 50px; border-color: purple;}
+  
+  .label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .agree {
+    color: green;
+    margin-right: 15px;
+  }
+  
+  .disagree {
+    color: purple;
+    margin-left: 15px;
+  }
+
+    
+    .button-container {
+      display: flex;
+      gap: 20px; /* Adds spacing between buttons */
+      margin-top: 20px; /* Adjust spacing above the buttons */
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+  
+  }
+  
+  .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 50px;
+      font-weight: 500;
+  }
+  
+  .prev-btn {
+      background-color: gray;
+      color: white;
+      text-align: center;
+      align-items: center;
+  
+  }
+  
+  .next-btn {
+      background-color: steelblue;
+      color: white;
+      text-align: center;
+  
+  }
+  
+  .btn:hover {
+      opacity: 0.8;
+      background-color: #1d3557;
+      color: white;
+  }
+.circle-1:hover {
+background-color: green;
+}
+    
+.circle-2:hover {
+background-color: green;
+}
+    
+.circle-3:hover {
+background-color: green;
+}
+    
+.circle-4:hover {
+background-color: grey;
+}
+    
+.circle-5:hover {
+background-color: purple;
+}
+    
+.circle-6:hover {
+background-color: purple;
+}
+    
+.circle-7:hover {
+background-color: purple;
+}
+
+.circle-1.selected {
+background-color: green;
+}
+        
+.circle-2.selected {
+background-color: green;
+}
+        
+.circle-3.selected {
+background-color: green;
+}
+        
+.circle-4.selected {
+background-color: grey;
+}
+        
+.circle-5.selected {
+background-color: purple;
+}
+        
+.circle-6.selected {
+background-color: purple;
+}
+        
+.circle-7.selected {
+background-color: purple;
+}
+
+/* ====== Footer ====== */
+
+.footer {
+  background-color: #89A8B2;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer h5 {
+  color: #274C77;
+  margin-bottom: 0.5rem;
+}
+
+.footer h6,
+.footer p {
+  color: #F1F0E8;
+  margin: 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #6c757d;
+}
+
+.footer a:hover,
+.footer a:active {
+  color: #F1F0E8;
+}
+
+.footer .footer-link {
+  font-weight: 500;
+}
+
+.footer .footer-link:hover,
+.footer .footer-link:active {
+  color: #F1F0E8 !important;
+}
+
+@media (max-width: 767.98px) {
+  .footer h5,
+  .footer h6,
+  .footer p,
+  .footer a {
+    font-size: 0.875rem;
+  }
+}
