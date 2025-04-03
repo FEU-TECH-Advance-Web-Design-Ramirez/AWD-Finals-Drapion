@@ -792,18 +792,17 @@ body::before
   resize: none; 
 }
 
-/* Ensure .add-journal-footer is a flex container */
+/* Journal footer */
 .add-journal-footer {
   display: flex;
-  justify-content: space-between; /* Save on the left, Close on the right */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px;
   gap: 10px;
-  margin-top: 15px; /* Ensure spacing */
+  margin-top: 15px;
 }
 
-/* Save Button - Aligned to the left */
 .save-journal-btn {
   background: #1e88e5; 
   color: #fff;
@@ -820,14 +819,12 @@ body::before
   cursor: pointer;
 }
 
-/* Save Button Hover */
 .save-journal-btn:hover {
-  background: #1565c0; /* Darker blue */
+  background: #1565c0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Slightly enlarges the button */
+  transform: scale(1.05);
 }
 
-/* Close Button - Aligned to the right */
 .close-journal-btn {
   background: #e0e0e0;
   color: #333;
@@ -843,9 +840,8 @@ body::before
   cursor: pointer;
 }
 
-/* Close Button Hover */
 .close-journal-btn:hover {
-  background: #bdbdbd; /* Darker gray */
+  background: #bdbdbd;
   color: #000;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
