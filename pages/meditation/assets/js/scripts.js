@@ -213,8 +213,8 @@ button.addEventListener("click", function () {
                     // Fix audio path and load it correctly
                     const audioElement = targetModal.querySelector("audio");
                     if (audioElement) {
-                        audioElement.src = `assets/audio/${experienceInfo.audio}`; // Corrected Path
-                        audioElement.load(); // Ensure it reloads properly
+                        audioElement.src = `assets/audio/${experienceInfo.audio}`;
+                        audioElement.load();
                         audioElement.play().catch(error => console.error("Autoplay Blocked:", error));
                     }
                     
