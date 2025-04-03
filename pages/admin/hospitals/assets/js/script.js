@@ -55,3 +55,22 @@ if (!type) {
             document.getElementById("registerFacilityMessage").style.color = "red";
         });
 });
+
+// Fetch All Facilities
+function fetchFacilities() {
+  axios.get(API_URL)
+      .then(response => {
+          console.log("Fetched Facilities:", response.data);
+          const facilities = response.data;
+          const list = document.getElementById("facilitiesList");
+          list.innerHTML = "";
+
+          facilities.forEach(facility => {
+              const li = document.createElement("li");
+              li.className = "list-group-item";
+              li.textContent = `${facility.name} - ${facility.location} (${facility.type})`;
+              list.appendChild(li);
+          });
+      })
+      .catch(error => console.error("Error fetching facilities:", error));
+}
