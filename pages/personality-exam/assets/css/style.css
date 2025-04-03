@@ -461,7 +461,34 @@ margin-top: 10px;
   .circle-7:hover {
   background-color: purple;
   }
+
+.circle-1.selected {
+  background-color: green;
+  }
   
+  .circle-2.selected {
+  background-color: green;
+  }
+  
+  .circle-3.selected {
+  background-color: green;
+  }
+  
+  .circle-4.selected {
+  background-color: grey;
+  }
+  
+  .circle-5.selected {
+  background-color: purple;
+  }
+  
+  .circle-6.selected {
+  background-color: purple;
+  }
+  
+  .circle-7.selected {
+  background-color: purple;
+  }
   /* ====== Footer ====== */
 
 .footer {
