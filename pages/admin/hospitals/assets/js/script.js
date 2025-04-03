@@ -74,3 +74,21 @@ function fetchFacilities() {
       })
       .catch(error => console.error("Error fetching facilities:", error));
 }
+
+// Display Facilities in List
+function displayFacilities(facilities) {
+  const list = document.getElementById("facilitiesList");
+  list.innerHTML = "";
+
+  if (facilities.length === 0) {
+      list.innerHTML = "<li class='list-group-item text-danger'>No facilities found.</li>";
+      return;
+  }
+
+  facilities.forEach(facility => {
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = `${facility.name} - ${facility.location} (${facility.type})`;
+      list.appendChild(li);
+  });
+}
