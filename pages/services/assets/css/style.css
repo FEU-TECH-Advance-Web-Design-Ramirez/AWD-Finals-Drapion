@@ -362,7 +362,7 @@
 }
 
 .medi-heading {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 0rem;
   color: #274C77;
@@ -370,7 +370,7 @@
 
 .medi-desc {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1;
   color: #000000;
   line-height: 1.4;
@@ -462,7 +462,7 @@
 }
 
 .mp-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #333;
   line-height: 1.5;
 }
@@ -570,7 +570,7 @@
 }
 
 .mj-heading {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 0rem;
   color: #274C77;
@@ -578,7 +578,7 @@
 
 .mj-desc {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1;
   color: #000000;
   line-height: 1.4;
@@ -648,7 +648,7 @@
 }
 
 .pte-heading {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 0rem;
   color: #274C77;
@@ -656,7 +656,7 @@
 
 .pte-desc {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1;
   color: #000000;
   line-height: 1.4;
@@ -701,4 +701,17 @@
     width: 90%;
     text-align: center;
   }
+}
+
+.container:not(.hero-container){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(800px, 90%);
+  padding: 20px;
+}
+
+.card{
+  width: min(800px, 90%);
+  border-radius: 30px;
 }
