@@ -132,7 +132,7 @@ function loginUser(event) {
     // Admin login check
     if (email === adminEmail && password === adminPassword) {
         sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
-        window.location.href = "../../../admin/users/index.html";  // Redirect to admin panel
+        window.location.href = "/AWD-Finals-Drapion/pages/admin/users/index.html";  // Redirect to admin panel
         return;
     }
 
