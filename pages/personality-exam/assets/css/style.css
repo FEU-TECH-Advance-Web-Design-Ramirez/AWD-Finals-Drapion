@@ -411,23 +411,17 @@ margin-top: 10px;
 }
 
 .btn {
-  background-color: #5D92BA; /* Blue color similar to the image */
-  color: #fff; /* White text */
-  font-size: 18px;
-  padding: 10px 25px;
-  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  display: block; /* Ensures it appears below other elements */
-  margin: 5px auto; /* Centers it and adds spacing */
-  text-align: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  width: 90px;
-  margin-bottom: 80px;
-  text-decoration: none !important;
-  }
+  transition: 0.3s;
+  margin-bottom: 50px;
+  background: steelblue;
+  color: white;
+  font-weight: 500;
+}
   
   .btn:hover {
   background-color: #2b4a88;
