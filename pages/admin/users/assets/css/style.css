@@ -264,3 +264,13 @@ body{
   .user-section{
     padding: 50px;
   }
+
+  .card{
+    width: min(800px, 90%);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center the content */
+  }
