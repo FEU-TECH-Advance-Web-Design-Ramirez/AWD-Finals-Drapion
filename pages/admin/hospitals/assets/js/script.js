@@ -215,3 +215,7 @@ function loadSelectedHospitals() {
   selectedHospitals = savedHospitals ? JSON.parse(savedHospitals) : [];
   displaySelectedHospitals();
 }
+
+// Call fetchAndDisplayHospitals on page load
+fetchAndDisplayHospitals();
+loadSelectedHospitals();
