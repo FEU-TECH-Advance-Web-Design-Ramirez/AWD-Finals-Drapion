@@ -126,6 +126,16 @@ function loginUser(event) {
     const password = document.getElementById("login-password").value.trim();  // Ensure password is captured here
     const messageBox = document.getElementById("login-message");
 
+    const adminEmail = "admin@example.com";
+    const adminPassword = "admin1234";
+
+    // Admin login check
+    if (email === adminEmail && password === adminPassword) {
+        sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
+        window.location.href = "/AWD-Finals-Drapion/pages/admin/users/index.html";
+        return;
+    }
+
     const API_URL = "https://demo-api-skills.vercel.app/api/MentalWellness/users/login/";
 
     axios.get(API_URL + email)
