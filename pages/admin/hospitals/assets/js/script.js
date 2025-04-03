@@ -236,3 +236,20 @@ function displaySelectedHospitals() {
       list.appendChild(li);
   });
 }
+
+// Edit hospital details
+function editHospital(index) {
+  const hospital = selectedHospitals[index];
+  const newName = prompt("Enter new name:", hospital.name);
+  const newLocation = prompt("Enter new location:", hospital.location);
+  const newType = prompt("Enter new type (Hospital/Clinic):", hospital.type);
+
+  if (newName && newLocation && newType) {
+      selectedHospitals[index] = { name: newName, location: newLocation, type: newType };
+      saveSelectedHospitals();
+      displaySelectedHospitals();
+      alert("✅ Hospital details updated!");
+  } else {
+      alert("❌ All fields must be filled!");
+  }
+}
