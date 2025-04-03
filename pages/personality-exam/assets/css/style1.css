@@ -428,6 +428,7 @@
       cursor: pointer;
       transition: 0.3s;
       margin-bottom: 50px;
+      font-weight: 500;
   }
   
   .prev-btn {
