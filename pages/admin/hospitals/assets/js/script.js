@@ -41,4 +41,17 @@ if (!type) {
   const location = `${city}, ${province}, ${region}`;
 
   console.log("Submitting Facility:", { name, location, contactInfo, type });
+
+  axios.post(API_URL, { name, location, contactInfo, type })
+        .then(response => {
+            console.log("Response:", response.data);
+            document.getElementById("registerFacilityMessage").textContent = "✅ Facility registered successfully!";
+            document.getElementById("registerFacilityMessage").style.color = "green";
+            document.getElementById("registerFacilityForm").reset();
+        })
+        .catch(error => {
+            console.error("Registration Error:", error.response ? error.response.data : error);
+            document.getElementById("registerFacilityMessage").textContent = "❌ Registration failed!";
+            document.getElementById("registerFacilityMessage").style.color = "red";
+        });
 });
