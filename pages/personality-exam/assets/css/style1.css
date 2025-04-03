@@ -344,7 +344,7 @@
   }
   
   h1 {
-  padding-top: 1800px !important;
+  padding-top: 1900px !important;
   
   }
   
@@ -409,31 +409,99 @@
     margin-left: 15px;
   }
 
-  .circle-1:hover {
-    background-color: green;
-    }
     
-    .circle-2:hover {
-    background-color: green;
-    }
-    
-    .circle-3:hover {
-    background-color: green;
-    }
-    
-    .circle-4:hover {
-    background-color: grey;
-    }
-    
-    .circle-5:hover {
-    background-color: purple;
-    }
-    
-    .circle-6:hover {
-    background-color: purple;
-    }
-    
-    .circle-7:hover {
-    background-color: purple;
-    }
+    .button-container {
+      display: flex;
+      gap: 20px; /* Adds spacing between buttons */
+      margin-top: 20px; /* Adjust spacing above the buttons */
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
   
+  }
+  
+  .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 50px;
+  }
+  
+  .prev-btn {
+      background-color: gray;
+      color: white;
+      text-align: center;
+      align-items: center;
+  
+  }
+  
+  .next-btn {
+      background-color: steelblue;
+      color: white;
+      text-align: center;
+  
+  }
+  
+  .btn:hover {
+      opacity: 0.8;
+      background-color: #1d3557;
+      color: white;
+  }
+.circle-1:hover {
+background-color: green;
+}
+    
+.circle-2:hover {
+background-color: green;
+}
+    
+.circle-3:hover {
+background-color: green;
+}
+    
+.circle-4:hover {
+background-color: grey;
+}
+    
+.circle-5:hover {
+background-color: purple;
+}
+    
+.circle-6:hover {
+background-color: purple;
+}
+    
+.circle-7:hover {
+background-color: purple;
+}
+
+.circle-1.selected {
+background-color: green;
+}
+        
+.circle-2.selected {
+background-color: green;
+}
+        
+.circle-3.selected {
+background-color: green;
+}
+        
+.circle-4.selected {
+background-color: grey;
+}
+        
+.circle-5.selected {
+background-color: purple;
+}
+        
+.circle-6.selected {
+background-color: purple;
+}
+        
+.circle-7.selected {
+background-color: purple;
+}
