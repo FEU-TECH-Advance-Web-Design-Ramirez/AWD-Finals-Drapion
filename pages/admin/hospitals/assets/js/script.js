@@ -17,4 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Register Facility
 document.getElementById("registerFacilityForm").addEventListener("submit", function(event) {
   event.preventDefault();
+
+  const name = document.getElementById("facilityName").value;
+  const region = document.getElementById("facilityRegion").value;
+  const province = document.getElementById("facilityProvince").value;
+  const city = document.getElementById("facilityCity").value;
+  const contactInfo = document.getElementById("facilityContact").value;
+  const type = document.getElementById("facilityType").value;
 });
