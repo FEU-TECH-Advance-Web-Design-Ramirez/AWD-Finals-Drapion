@@ -238,12 +238,13 @@ body::before
     z-index: 1;
     width: 90%; 
     max-width: 1200px; 
-    min-height: 850px; 
+    min-height: 80vh; 
     margin: 0 auto;
     margin-bottom: 50px;
     padding: 10px;
     color: #fff;
     display: flex;
+    flex: wrap;
     border-radius: 10px;
     background-color: #274C77;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
@@ -251,7 +252,8 @@ body::before
 
   /* Calendar Styles */
   .journal-container .left {
-    width: 50%; 
+    width: 100%;
+    max-width: 50%; 
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -370,14 +372,13 @@ body::before
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
   }
 
   .calendar .days .day {
     width: 14.28%;
+    min-height: 70px;
     height: 90px;
     display: flex;
     align-items: center;
@@ -385,6 +386,7 @@ body::before
     cursor: pointer;
     color: #274C77;
     border: 1px solid #f5f5f5;
+    box-sizing: border-box;
   }
   .calendar .days .day:nth-child(7n + 1) {
     border-left: 2px solid #f5f5f5;
@@ -512,7 +514,8 @@ body::before
 
   /* Journal Section */
   .journal-container .right {
-    width: 50%; 
+    width: 100%;
+    max-width: 50%;  
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -647,6 +650,18 @@ body::before
   
   .add-journal-wrapper.active {
     display: flex; 
+  }
+
+  @media (max-width: 767.98px) {
+    .add-journal-wrapper {
+        position: relative; 
+        top: auto; 
+        left: auto; 
+        margin: 20px auto; 
+        width: 90%; 
+        max-width: 90%; 
+        transform: none; 
+    }
   }
   /*Emoji Section*/
   .emoji-container {
@@ -898,3 +913,44 @@ body::before
       font-size: 0.875rem;
     }
   }
+
+/* responsive adjustments for calendar */
+@media (max-width: 767.98px) {
+  .calendar .month {
+      padding: 0 20px;
+  }
+
+  .calendar .weekdays {
+      padding: 0 10px;
+  }
+
+  .calendar .days .day {
+      width: 20%; 
+      height: 70px; 
+  }
+
+  .calendar .goto-today {
+      padding: 0 10px;
+  }
+}
+
+/* responsive adjustments for journal container */
+@media (max-width: 991px) {
+  .journal-container {
+      flex-direction: column;
+  }
+
+  .journal-container .left,
+  .journal-container .right {
+      max-width: 100%;
+      width: 100%;
+  }
+
+  .journal-container .left {
+      padding: 10px;
+  }
+
+  .journal-container .right {
+      padding: 10px;
+  }
+}
