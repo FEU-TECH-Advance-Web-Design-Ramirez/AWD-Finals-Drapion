@@ -432,6 +432,36 @@ margin-top: 10px;
   background-color: #2b4a88;
   color: white; /* Slightly darker blue on hover */
   }
+
+  
+.circle-1:hover {
+  background-color: green;
+  }
+  
+  .circle-2:hover {
+  background-color: green;
+  }
+  
+  .circle-3:hover {
+  background-color: green;
+  }
+  
+  .circle-4:hover {
+  background-color: grey;
+  }
+  
+  .circle-5:hover {
+  background-color: purple;
+  }
+  
+  .circle-6:hover {
+  background-color: purple;
+  }
+  
+  .circle-7:hover {
+  background-color: purple;
+  }
+  
   /* ====== Footer ====== */
 
 .footer {
