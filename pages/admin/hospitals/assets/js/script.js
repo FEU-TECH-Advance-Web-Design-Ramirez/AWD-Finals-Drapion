@@ -253,3 +253,13 @@ function editHospital(index) {
       alert("❌ All fields must be filled!");
   }
 }
+
+// Delete selected hospital
+function deleteHospital(index) {
+  if (!confirm("Are you sure you want to delete this hospital?")) return;
+
+  selectedHospitals.splice(index, 1); // Remove hospital from the array
+  saveSelectedHospitals();
+  displaySelectedHospitals();
+  alert("✅ Hospital deleted from appointment list!");
+}
