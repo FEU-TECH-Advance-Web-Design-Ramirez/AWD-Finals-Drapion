@@ -351,3 +351,20 @@ document.getElementById("facilityProvince").addEventListener("change", function(
       });
   }
 });
+
+document.getElementById("searchRegion").addEventListener("change", function() {
+  const region = this.value;
+  const provinceSelect = document.getElementById("searchProvince");
+  const citySelect = document.getElementById("searchCity");
+  provinceSelect.innerHTML = '<option value="">Select Province</option>';
+  citySelect.innerHTML = '<option value="">Select City</option>';
+  
+  if (region && locationData[region]) {
+      Object.keys(locationData[region]).forEach(province => {
+          let option = document.createElement("option");
+          option.value = province;
+          option.textContent = province;
+          provinceSelect.appendChild(option);
+      });
+  }
+});
