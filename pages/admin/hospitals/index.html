@@ -52,7 +52,25 @@
             <!-- Register Facility Form -->
             <div class="card p-4 mt-4">
                 <h4>Register Hospital or Clinic</h4>
-                <form id="registerFacilityForm"></form>
+                <form id="registerFacilityForm">
+                  <div class="mb-3">
+                     <label class="form-label">Name</label>
+                     <input type="text" class="form-control" id="facilityName" required>
+                 </div>
+                 <div class="mb-3">
+                  <label class="form-label">Location</label>
+                  <div class="mb-3">
+                      <label class="form-label">Region</label>
+                      <select class="form-control" id="facilityRegion" required>
+                        <option value="">Select Region</option>
+                        <option value="Metro Manila">Metro Manila</option>
+                        <option value="Mindanao">Mindanao</option>
+                        <option value="North Luzon">North Luzon</option>
+                        <option value="South Luzon">South Luzon</option>
+                        <option value="Visayas">Visayas</option>
+                    </select>
+                </div>
+                </form>
             </div>
             <!-- Fetch Facilities -->
             <div class="card p-4 mt-4">
