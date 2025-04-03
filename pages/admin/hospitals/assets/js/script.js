@@ -156,3 +156,16 @@ function displaySearchResults(results) {
 
 let selectedHospitals = [];
 
+// Fetch hospitals from API and display them
+function fetchAndDisplayHospitals() {
+  axios.get(API_URL)
+      .then(response => {
+          console.log("Fetched Hospitals:", response.data);
+          displayHospitalsToPick(response.data); // Pass data to display function
+      })
+      .catch(error => {
+          console.error("Error fetching hospitals:", error);
+          document.getElementById("hospitalList").innerHTML = 
+              "<li class='list-group-item text-danger'>Failed to load hospitals.</li>";
+      });
+}
