@@ -139,9 +139,6 @@ function signupUser(event) {
     })
     .then(response => {
         messageBox.textContent = "✅ Account created! Redirecting to login...";
-        
-        // 🔴 Store user data in localStorage (⚠️ Unsafe)
-        localStorage.setItem("user", JSON.stringify({ name, email, password }));
 
         document.getElementById("createUserForm").reset();
         setTimeout(() => window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html", 1500);
@@ -152,66 +149,21 @@ function signupUser(event) {
     });
 }
 
-// function loginUser(event) {
-//     event.preventDefault();
-//     const email = document.getElementById("login-email").value;
-//     const password = document.getElementById("login-password").value;
-//     const messageBox = document.getElementById("login-message");
-
-//     const adminEmail = "admin@example.com";
-//     const adminPassword = "admin1234";
-
-//     if (email === adminEmail && password === adminPassword) {
-//         sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
-//         window.location.href = "../../../admin/users/index.html";  // Redirect to admin panel
-//         return;
-//     }
-
-//     const storedUser = JSON.parse(localStorage.getItem("user"));
-
-//     if (storedUser && storedUser.email === email && storedUser.password === password) {
-//         sessionStorage.setItem("loggedInUser", JSON.stringify(storedUser));
-//         window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";
-//         return;
-//     }
-
-//     axios.post(`${API_URL}/login`, { email, password })
-//         .then(response => {
-//             if (response.data.success) {
-//                 sessionStorage.setItem("loggedInUser", JSON.stringify(response.data.user));
-
-//                 localStorage.setItem("user", JSON.stringify(response.data.user));
-
-//                 window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";
-//             } else {
-//                 messageBox.textContent = "❌ Login failed: " + (response.data.message || "Incorrect credentials.");
-//             }
-//         })
-//         .catch(error => {
-//             console.error("Login Error:", error);
-
-//             if (error.response) {
-//                 if (error.response.status === 400) {
-//                     messageBox.textContent = "❌ Invalid email or password.";
-//                 } else if (error.response.status === 404) {
-//                     messageBox.textContent = "❌ User not found. Please check your email.";
-//                 } else if (error.response.status === 500) {
-//                     messageBox.textContent = "❌ Server error. Please try again later.";
-//                 } else {
-//                     messageBox.textContent = "❌ " + error.response.data.message;
-//                 }
-//             } else if (error.request) {
-//                 messageBox.textContent = "❌ No response from server. Check your internet connection.";
-//             } else {
-//                 messageBox.textContent = "❌ Login failed: " + error.message;
-//             }
-//         });
-// }
-
 function loginUser(event) {
     event.preventDefault();
     const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-password").value.trim();  // Ensure password is captured here
     const messageBox = document.getElementById("login-message");
+
+    const adminEmail = "admin@example.com";
+    const adminPassword = "admin1234";
+
+    // Admin login check
+    if (email === adminEmail && password === adminPassword) {
+        sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
+        window.location.href = "../../../admin/users/index.html";  // Redirect to admin panel
+        return;
+    }
 
     const API_URL = "https://demo-api-skills.vercel.app/api/MentalWellness/users/login/";
 
@@ -219,8 +171,9 @@ function loginUser(event) {
         .then(response => {
             if (response.data) {
                 sessionStorage.setItem("loggedInUser", JSON.stringify(response.data));
+                document.getElementById("loginUserForm").reset();  // Reset form fields after success
                 alert("Login Success");
-                window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";
+                window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";  // Redirect to dashboard
             } else {
                 messageBox.textContent = "❌ Login failed: Invalid email.";
             }
