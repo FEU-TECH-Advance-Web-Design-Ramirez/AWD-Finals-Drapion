@@ -153,3 +153,6 @@ function displaySearchResults(results) {
       list.appendChild(li);
   });
 }
+
+let selectedHospitals = [];
+
