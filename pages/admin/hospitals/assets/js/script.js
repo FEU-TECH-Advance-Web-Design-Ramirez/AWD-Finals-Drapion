@@ -36,4 +36,9 @@ if (!type) {
     document.getElementById("registerFacilityMessage").style.color = "red";
     return;
 }
+
+  // Constructing the full location format: "City, Province, Region"
+  const location = `${city}, ${province}, ${region}`;
+
+  
 });
