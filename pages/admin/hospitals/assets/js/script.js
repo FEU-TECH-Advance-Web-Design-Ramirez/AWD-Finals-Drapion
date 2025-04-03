@@ -368,3 +368,19 @@ document.getElementById("searchRegion").addEventListener("change", function() {
       });
   }
 });
+
+document.getElementById("searchProvince").addEventListener("change", function() {
+  const region = document.getElementById("searchRegion").value;
+  const province = this.value;
+  const citySelect = document.getElementById("searchCity");
+  citySelect.innerHTML = '<option value="">Select City</option>';
+  
+  if (region && province && locationData[region][province]) {
+      locationData[region][province].forEach(city => {
+          let option = document.createElement("option");
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+      });
+  }
+});
