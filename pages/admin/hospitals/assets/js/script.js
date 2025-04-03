@@ -335,3 +335,19 @@ document.getElementById("facilityRegion").addEventListener("change", function() 
       });
   }
 });
+
+document.getElementById("facilityProvince").addEventListener("change", function() {
+  const region = document.getElementById("facilityRegion").value;
+  const province = this.value;
+  const citySelect = document.getElementById("facilityCity");
+  citySelect.innerHTML = '<option value="">Select City</option>';
+  
+  if (region && province && locationData[region][province]) {
+      locationData[region][province].forEach(city => {
+          let option = document.createElement("option");
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+      });
+  }
+});
