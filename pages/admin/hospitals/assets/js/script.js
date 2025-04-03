@@ -169,3 +169,19 @@ function fetchAndDisplayHospitals() {
               "<li class='list-group-item text-danger'>Failed to load hospitals.</li>";
       });
 }
+
+// Display hospitals to be selected for the appointment list
+function displayHospitalsToPick(hospitals) {
+  const list = document.getElementById("hospitalList");
+  list.innerHTML = ""; // Clear the list before rendering
+
+  hospitals.forEach((hospital, index) => {
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+      li.innerHTML = `
+          <span>${hospital.name} - ${hospital.location} (${hospital.type})</span>
+          <button class="btn btn-success btn-sm" onclick="selectHospital(${index}, '${hospital.name}', '${hospital.location}', '${hospital.type}')">Select</button>
+      `;
+      list.appendChild(li);
+  });
+}
