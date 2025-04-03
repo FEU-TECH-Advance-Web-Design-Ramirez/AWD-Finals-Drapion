@@ -73,6 +73,34 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchUsers(); // Automatically fetch users when the page loads
 });
 
+function signupUser(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const messageBox = document.getElementById("createUserMessage");
+
+    axios.post(API_URL, { name, email, password }, {
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => {
+        messageBox.textContent = "✅ Account created!";
+        
+        localStorage.setItem("user", JSON.stringify({ name, email, password }));
+
+        document.getElementById("createUserForm").reset();
+        
+        setTimeout(() => {
+            fetchUsers(); // Delay fetching users
+        }, 1500);
+    })
+    .catch(error => {
+        console.error("Signup Error:", error.response ? error.response.data : error.message);
+        messageBox.textContent = "❌ Signup failed: " + (error.response ? error.response.data.error : "Unknown error");
+    });
+}
+
 function fetchUsers() {
     axios.get(API_URL)
         .then(response => {
@@ -93,6 +121,77 @@ function fetchUsers() {
         });
 }
 
+function fetchUserByEmail() {
+    const email = document.getElementById("searchEmail").value.trim().toLowerCase();
+    const messageBox = document.getElementById("fetchUserMessage");
+
+    if (!email) {
+        messageBox.textContent = "❌ Please enter an email.";
+        return;
+    }
+
+    axios.get(API_URL)
+        .then(response => {
+            const users = response.data;
+            const user = users.find(user => user.email.toLowerCase() === email);
+
+            if (!user) {
+                messageBox.textContent = "❌ User not found.";
+            } else {
+                messageBox.textContent = `✅ User Found: ${user.name} (ID: ${user.id}, Email: ${user.email})`;
+            }
+        })
+        .catch(error => {
+            messageBox.textContent = "❌ Error fetching user.";
+            console.error("Error fetching user:", error.response ? error.response.data : error.message);
+        });
+}
+
+
+
+// ✅ Update User Name
+function updateUser() {
+    const id = document.getElementById("updateUserId").value.trim();
+    const name = document.getElementById("newUserName").value.trim();
+    const messageBox = document.getElementById("updateUserMessage");
+
+    if (!id || !name) {
+        messageBox.textContent = "❌ Please enter User ID and new name.";
+        return;
+    }
+
+    axios.put(`${API_URL}/${id}`, { name }, {
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => {
+        messageBox.textContent = `✅ Name updated successfully to "${response.data.name}"`;
+    })
+    .catch(error => {
+        messageBox.textContent = "❌ Error updating name.";
+        console.error("Error updating user:", error.response ? error.response.data : error.message);
+    });
+}
+
+
+function deleteUser() {
+    const id = document.getElementById("deleteUserId").value.trim();
+    const messageBox = document.getElementById("deleteUserMessage");
+
+    if (!id) {
+        messageBox.textContent = "❌ Please enter User ID.";
+        return;
+    }
+
+    axios.delete(`${API_URL}/${id}`)
+        .then(response => {
+            messageBox.textContent = "✅ User deleted successfully!";
+        })
+        .catch(error => {
+            messageBox.textContent = "❌ Error deleting user.";
+            console.error("Error deleting user:", error.response ? error.response.data : error.message);
+        });
+}
+
 
 document.getElementById("createUserForm").addEventListener("submit", signupUser);
 document.getElementById("loginUserForm").addEventListener("submit", loginUser);
@@ -109,62 +208,15 @@ function signupUser(event) {
         headers: { "Content-Type": "application/json" }
     })
     .then(response => {
-        messageBox.textContent = "✅ Account created! Redirecting to login...";
+        messageBox.textContent = "✅ Account created!";
+        
+        // 🔴 Store user data in localStorage (⚠️ Unsafe)
+        localStorage.setItem("user", JSON.stringify({ name, email, password }));
 
         document.getElementById("createUserForm").reset();
-        setTimeout(() => window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html", 1500);
     })
     .catch(error => {
         console.error("Signup Error:", error.response ? error.response.data : error.message);
         messageBox.textContent = "❌ Signup failed: " + (error.response ? error.response.data.error : "Unknown error");
     });
-}
-
-function loginUser(event) {
-    event.preventDefault();
-    const email = document.getElementById("login-email").value.trim();
-    const password = document.getElementById("login-password").value.trim();  // Ensure password is captured here
-    const messageBox = document.getElementById("login-message");
-
-    const adminEmail = "admin@example.com";
-    const adminPassword = "admin1234";
-
-    // Admin login check
-    if (email === adminEmail && password === adminPassword) {
-        sessionStorage.setItem("loggedInUser", JSON.stringify({ email, role: "admin" }));
-        window.location.href = "../../../admin/users/index.html";  // Redirect to admin panel
-        return;
-    }
-
-    const API_URL = "https://demo-api-skills.vercel.app/api/MentalWellness/users/login/";
-
-    axios.get(API_URL + email)
-        .then(response => {
-            if (response.data) {
-                sessionStorage.setItem("loggedInUser", JSON.stringify(response.data));
-                document.getElementById("loginUserForm").reset();  // Reset form fields after success
-                messageBox.textContent = "✅ Login successful! Redirecting...";
-                window.location.href = "/AWD-Finals-Drapion/pages/dashboard/index.html";  // Redirect to dashboard
-            } else {
-                messageBox.textContent = "❌ Login failed: Invalid email.";
-            }
-        })
-        .catch(error => {
-            console.error("Login Error:", error);
-            messageBox.textContent = "❌ Failed to login. Please check your email.";
-        });
-}
-
-
-// ✅ CHECK IF USER IS LOGGED IN
-function checkLogin() {
-    if (!sessionStorage.getItem("loggedInUser")) {
-        window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html";
-    }
-}
-
-// ✅ LOGOUT FUNCTION
-function logoutUser() {
-    sessionStorage.removeItem("loggedInUser");
-    window.location.href = "/AWD-Finals-Drapion/index.html";
 }
