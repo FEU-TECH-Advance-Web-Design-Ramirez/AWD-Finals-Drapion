@@ -40,5 +40,5 @@ if (!type) {
   // Constructing the full location format: "City, Province, Region"
   const location = `${city}, ${province}, ${region}`;
 
-  
+  console.log("Submitting Facility:", { name, location, contactInfo, type });
 });
