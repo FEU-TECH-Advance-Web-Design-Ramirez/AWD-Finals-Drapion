@@ -205,6 +205,124 @@
     }
   }
 
+  /* ====== Hero Section ====== */
+.hero-section {
+  background: url('/assets/img/MeditationBg1.png') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  color: #274C77;
+  padding: 4rem 8rem;
+  }
+  
+  /* ====== Left Heading ====== */
+  .hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 450px;
+  margin-left: 180px;
+  }
+
+ /* ====== Right Description ====== */
+.hero-desc {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #F1F0E8;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  }
+  
+ /* ====== Quote ====== */
+  .hero-quote {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #274C77;
+  }
+
+ /* ====== Content Section ====== */
+.content-section {
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 1rem 0;
+  padding-bottom: 6rem;
+  }
+  
+  .content-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #274C77;
+  }
+  
+  .content-subheading {
+  font-size: 1rem;
+  color: #6C7A92;
+  margin-bottom: 2rem;
+  }
+  
+ /* ====== Buttons ====== */
+  .content-btn {
+  display: block;
+  width: 100%;
+  background: #E7ECEF;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #274C77;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+  }
+  
+  .content-btn:hover {
+  background: #DDE5ED;
+  }
+
+ /* ====== Modal Styles ====== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  /*  MODAL CONTENT */
+.modal-content {
+  background: #B0C4CF;
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  }
+
+  #loadingModal p {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center text vertically & horizontally */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    }
+    
   /* ====== Footer ====== */
 
 .footer {
