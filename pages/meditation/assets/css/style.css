@@ -367,6 +367,18 @@ audio {
   color: #1F3B5C;
 }
 
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1F3B5C;
+  z-index: 9999;
+  padding: 5px 10px;
+  border-radius: 5px;
+  }
+  
   /* ====== Footer ====== */
 
 .footer {
