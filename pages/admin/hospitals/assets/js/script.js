@@ -92,3 +92,46 @@ function displayFacilities(facilities) {
       list.appendChild(li);
   });
 }
+
+// Search Facilities
+function searchFacilities() {
+  const region = document.getElementById("searchRegion").value;
+  const province = document.getElementById("searchProvince").value;
+  const city = document.getElementById("searchCity").value;
+  const type = document.getElementById("searchType").value;
+
+  if (!region && !province && !city && !type) {
+      alert("❌ Please provide at least one search criterion (region, province, city, or type).");
+      return;
+  }
+
+  // Construct search location string
+  let location = "";
+  if (city) location = city;
+  if (province) location = location ? `${location}, ${province}` : province;
+  if (region) location = location ? `${location}, ${region}` : region;
+
+  console.log("Searching for:", { location, type });
+
+  axios.get(SEARCH_API_URL, { params: { location, type } })
+      .then(response => {
+          console.log("Search API Results:", response.data);
+          displaySearchResults(response.data);
+      })
+      .catch(error => {
+          console.error("Search API Error:", error.response ? error.response.data : error);
+          console.warn("❗ Using Local Filtering as Fallback");
+
+          // If API search fails, fetch all and filter manually
+          axios.get(API_URL)
+              .then(response => {
+                  console.log("Fetched All Facilities for Local Filtering:", response.data);
+                  const filtered = response.data.filter(facility =>
+                      (!location || facility.location.includes(location)) &&
+                      (!type || facility.type === type)
+                  );
+                  displaySearchResults(filtered);
+              })
+              .catch(err => console.error("Fallback Error Fetching All Facilities:", err));
+      });
+}
