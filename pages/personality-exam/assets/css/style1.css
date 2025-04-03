@@ -408,3 +408,32 @@
     color: purple;
     margin-left: 15px;
   }
+
+  .circle-1:hover {
+    background-color: green;
+    }
+    
+    .circle-2:hover {
+    background-color: green;
+    }
+    
+    .circle-3:hover {
+    background-color: green;
+    }
+    
+    .circle-4:hover {
+    background-color: grey;
+    }
+    
+    .circle-5:hover {
+    background-color: purple;
+    }
+    
+    .circle-6:hover {
+    background-color: purple;
+    }
+    
+    .circle-7:hover {
+    background-color: purple;
+    }
+  
