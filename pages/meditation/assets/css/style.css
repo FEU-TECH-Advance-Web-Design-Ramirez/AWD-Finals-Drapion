@@ -205,6 +205,29 @@
     }
   }
 
+  /* ====== Hero Section ====== */
+.hero-section {
+  background: url('/assets/img/MeditationBg1.png') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  color: #274C77;
+  padding: 4rem 8rem;
+  }
+  
+  /* Left Heading */
+  .hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 450px;
+  margin-left: 180px; /* Adjust as needed */
+  }
+  
   /* ====== Footer ====== */
 
 .footer {
