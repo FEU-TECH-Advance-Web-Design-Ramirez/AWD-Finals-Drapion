@@ -345,7 +345,7 @@ padding-top: 30px;
 }
 
 h1 {
-padding-top: 3680px !important;
+padding-top: 3650px !important;
 color: #F1F0E8;
 
 }
@@ -412,16 +412,17 @@ margin-top: 10px;
 }
 
 .btn {
-  padding: 10px 20px;
+  padding: 20px 90px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 45px;
   cursor: pointer;
   transition: 0.3s;
   margin-bottom: 50px;
   background: steelblue;
   color: white;
   font-weight: 500;
+  font-size: large;
 }
   
   .btn:hover {
