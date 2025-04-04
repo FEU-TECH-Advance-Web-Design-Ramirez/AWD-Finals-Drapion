@@ -265,4 +265,11 @@
   /* ====== Hospital Section ====== */
   .hs-container{
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    width: min(800px, 90%);
   }
