@@ -234,3 +234,16 @@ backButtons.forEach(button => {
   });
 });
 });
+
+// ✅ CHECK IF USER IS LOGGED IN
+function checkLogin() {
+if (!sessionStorage.getItem("loggedInUser")) {
+    window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html";
+}
+}
+
+// ✅ LOGOUT FUNCTION
+function logoutUser() {
+sessionStorage.removeItem("loggedInUser");
+window.location.href = "/AWD-Finals-Drapion/index.html";
+}
