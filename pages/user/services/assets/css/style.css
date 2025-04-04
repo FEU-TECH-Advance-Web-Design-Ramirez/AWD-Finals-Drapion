@@ -556,3 +556,108 @@
 .panel-left, .panel-right{
   width: 45%;
 }
+
+/* ====== Mood Journal Section ====== */
+
+.mj-section {
+  background-color: #F1F0E8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #F1F0E8;
+  padding: 4rem 8rem;
+  overflow: hidden;
+}
+
+
+.mj-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.mj-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  color: #274C77;
+}
+
+.mj-desc {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.mj-img{
+  background: url(../img/mj-img.webp) no-repeat center center/cover;
+  border-radius: 30px;
+  width: min(400px, 400px);
+  height: min(400px, 400px);
+}
+
+@media (max-width: 991px) {
+  .mj-heading {
+    font-size: 2rem;
+  }
+
+  .mj-desc {
+    font-size: 1rem;
+  }
+
+  .mj-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .mj-section img {
+    width: 50%;
+  }
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mj-heading {
+    font-size: 1.8rem;
+  }
+
+  .mj-desc {
+    font-size: 0.9rem;
+  }
+
+  .mj-heading, .mj-desc {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 667px) {
+  .mj-img{
+    background: url(../img/mj-img.webp) no-repeat center center/cover;
+    border-radius: 30px;
+    width: min(300px, 300px);
+    height: min(300px, 300px);
+  }
+
+  .mj-heading {
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .mj-desc {
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
