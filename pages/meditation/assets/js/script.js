@@ -73,116 +73,116 @@ const experienceData = {
       "Self Esteem": { 
         title: "Self-Esteem Meditation for Beginner", 
         description: "A meditation designed to build confidence and self-worth.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/beginner-self-esteem.mp3" 
       },
       "Manifesting": { 
         title: "Manifesting Meditation for Beginner", 
         description: "An easy guide to understanding the power of manifestation.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/beginner-maifesting.mp3" 
       },
       "Stress": { 
         title: "Stress Meditation for Beginner", 
         description: "A simple meditation to help you release daily stress and tension.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/beginner-stress.mp3" 
       },
       "Productivity": { 
         title: "Productivity Meditation for Beginner", 
         description: "A meditation to enhance focus and efficiency for beginners.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-productivity.mp3" 
       },
       "Happiness": { 
         title: "Happiness Meditation for Beginner", 
         description: "A joyful meditation to cultivate happiness and gratitude.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/beginner-happiness.mp3" 
       },
       "Spirituality": { 
         title: "Spirituality Meditation for Beginner", 
         description: "An introductory meditation to connect with your inner self.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/beginner-spirituality.mp3" 
       }
   },
   "I've Meditated a Few Times": {
       "Sleep": { 
         title: "Sleeping Meditation for Intermediate", 
         description: "A deeper meditation practice to enhance sleep quality.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-sleep.mp3" 
       },
       "Sadness": { 
         title: "Sadness Meditation for Intermediate", 
         description: "A guided meditation to navigate and transform sadness.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-sadness.mp3" 
       },
       "Self Esteem": { 
         title: "Self-Esteem Meditation for Intermediate", 
         description: "A confidence-boosting meditation to reinforce self-worth.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-self-esteem.mp3" 
       },
       "Manifesting": { 
         title: "Manifesting Meditation for Intermediate", 
         description: "An advanced guide to turning thoughts into reality.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-manifesting.mp3" 
       },
       "Stress": { 
         title: "Stress Meditation for Intermediate", 
         description: "A mindful meditation to effectively manage stress.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-stress.mp3" 
       },
       "Productivity": { 
         title: "Productivity Meditation for Intermediate", 
         description: "A meditation to align focus and energy for success.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-productivity.mp3" 
       },
       "Happiness": { 
         title: "Happiness Meditation for Intermediate", 
         description: "A meditation to deepen joy and appreciation in life.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-happiness.mp3" 
       },
       "Spirituality": { 
         title: "Spirituality Meditation for Intermediate", 
         description: "A meditation to enhance spiritual awareness and connection.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/intermediate-spirituality.mp3" 
       }
   },
   "I Meditate a Lot": {
       "Sleep": { 
         title: "Sleeping Meditation for Advanced", 
         description: "A deep, immersive sleep meditation for experienced practitioners.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-sleep.mp3" 
               },
       "Sadness": { 
         title: "Sadness Meditation for Advanced", 
         description: "An advanced meditation for deep emotional healing.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-sadness.mp3" 
       },
       "Self Esteem": { 
         title: "Self-Esteem Meditation for Advanced", 
         description: "A powerful meditation to reinforce self-love and confidence.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-self-esteem.mp3" 
       },
       "Manifesting": { 
         title: "Manifesting Meditation for Advanced", 
         description: "A focused practice for manifesting with clarity and intention.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-manifesting.mp3" 
       },
       "Stress": { 
         title: "Stress Meditation for Advanced", 
         description: "A profound meditation to dissolve deep-rooted stress.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-stress.mp3" 
       },
       "Productivity": { 
         title: "Productivity Meditation for Advanced", 
         description: "A high-level meditation to maximize efficiency and output.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-productivity.mp3" 
       },
       "Happiness": { 
         title: "Happiness Meditation for Advanced", 
         description: "A transformative meditation to cultivate lasting happiness.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-happiness.mp3" 
       },
       "Spirituality": { 
         title: "Spirituality Meditation for Advanced", 
         description: "A deep spiritual journey to connect with your highest self.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion-2/pages/meditation/assets/audio/advanced-spirituality.mp3" 
       }
   }
 };
