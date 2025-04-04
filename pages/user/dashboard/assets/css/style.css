@@ -392,3 +392,33 @@ a {
     padding: 1rem;
     margin-top: 0px;
   }
+}
+
+.cs2{
+  background: url(../img/cs2-bg.png) no-repeat center center/cover;
+}
+
+.cs2 h2{
+  color: #F1F0E8;
+}
+
+.cs2{
+background-color: #E7ECEF;
+}
+
+.cs2 .card{
+border-radius: 30px;
+}
+
+
+@media (min-width: 991px) {
+.cs2 .card {
+  width: 100%;
+}
+.cs2 .container {
+max-width: 750px;
+}
+.cs2 h2{
+color: #274C77;
+}
+}
