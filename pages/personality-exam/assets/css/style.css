@@ -109,6 +109,15 @@
       width: 100%;
       visibility: visible;
   }
+  .logout-link{
+    display: none;
+  }
+}
+
+@media (max-width: 991px){
+  .logout{
+    display: none;
+  }
 }
 
 @media (max-width: 767.98px) {
