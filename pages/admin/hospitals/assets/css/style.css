@@ -273,3 +273,7 @@
   .card{
     width: min(800px, 90%);
   }
+
+  h2.text-center {
+    color: #274C77;
+  }
