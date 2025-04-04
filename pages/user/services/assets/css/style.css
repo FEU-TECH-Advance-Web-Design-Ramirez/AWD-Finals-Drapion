@@ -338,3 +338,221 @@
     max-width: 90%;
   }
 }
+
+/* ====== Meditation Section ====== */
+
+.medi-section {
+  background-color: #F1F0E8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #F1F0E8;
+  padding: 4rem 8rem;
+  overflow: hidden;
+}
+
+
+.medi-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.medi-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+  color: #274C77;
+}
+
+.medi-desc {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.medi-img{
+  background: url(../img/meditationSectionImg.jpg) no-repeat center center/cover;
+  border-radius: 30px;
+  width: min(400px, 400px);
+  height: min(400px, 400px);
+}
+
+@media (max-width: 667px) {
+  .medi-img{
+    background: url(../img/meditationSectionImg.jpg) no-repeat center center/cover;
+    border-radius: 30px;
+    width: min(300px, 300px);
+    height: min(300px, 300px);
+  }
+}
+
+@media (max-width: 991px) {
+  .medi-heading {
+    font-size: 2rem;
+  }
+
+  .medi-desc {
+    font-size: 1rem;
+  }
+
+  .medi-section {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .medi-section img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .medi-heading {
+    font-size: 1.8rem;
+  }
+
+  .medi-desc {
+    font-size: 0.9rem;
+  }
+
+  .medi-heading, .medi-desc {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
+@media (min-width: 992px){
+  .col-lg-6{
+      width: 100%;
+  }
+}
+
+.cta-button {
+  padding: 10px 30px;
+  background-color: #274C77;
+  color: #F1F0E8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #89A8B2;
+  color: #274C77;
+}
+
+.mp-section {
+  background-color: #F1F0E8;
+  width: 100vw;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.mp-section .container {
+  max-width: 1100px;
+}
+
+/* Headings and Descriptions */
+.mp-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #274C77;
+}
+
+.mp-desc {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Custom Audio Player */
+.custom-audio-player {
+  width: 100%;
+  max-width: 350px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #F1F0E8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.audio-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #274C77;
+  margin-bottom: 1rem;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #274C77 url('../img/play-icon.png') no-repeat center;
+  background-size: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.play-btn.pause {
+  background: #274C77 url('../img/pause-icon.png') no-repeat center;
+  background-size: 50%;
+}
+
+.audio-controls span {
+  font-size: 1rem;
+  color: #7E8A94;
+}
+
+#seekBar {
+  flex: 1;
+  appearance: none;
+  height: 3px;
+  background: #6C757D;
+  border-radius: 5px;
+  outline: none;
+}
+
+#seekBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #274C77;
+  cursor: pointer;
+}
+
+/* Responsive Fixes */
+@media (max-width: 991px) {
+  .mp-section {
+      padding: 3rem 1rem;
+  }
+  .mp-heading {
+      font-size: 1.75rem;
+  }
+  .mp-desc {
+      font-size: 1rem;
+  }
+}
+
+.panel-left, .panel-right{
+  width: 45%;
+}
