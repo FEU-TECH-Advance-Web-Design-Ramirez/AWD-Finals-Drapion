@@ -188,41 +188,52 @@ const experienceData = {
 };
 
 experienceButtons.forEach(button => {
-button.addEventListener("click", function () {
-    const selectedExperience = this.innerText.trim();
-    const experienceInfo = experienceData[selectedExperience][selectedMeditationType];
+  button.addEventListener("click", function () {
+      const selectedExperience = this.innerText.trim();
+      const experienceInfo = experienceData[selectedExperience][selectedMeditationType];
 
-    experienceModal.classList.remove("show");
-    setTimeout(() => {
-        experienceModal.style.display = "none";
-        loadingModal.style.display = "flex";
-        setTimeout(() => loadingModal.classList.add("show"), 10);
+      experienceModal.classList.remove("show");
+      setTimeout(() => {
+          experienceModal.style.display = "none";
+          loadingModal.style.display = "flex";
+          setTimeout(() => loadingModal.classList.add("show"), 10);
 
-        setTimeout(() => {
-            loadingModal.classList.remove("show");
-            setTimeout(() => loadingModal.style.display = "none", 300);
+          setTimeout(() => {
+              loadingModal.classList.remove("show");
+              setTimeout(() => loadingModal.style.display = "none", 300);
 
-            if (selectedModal) {
-                const targetModal = document.getElementById(selectedModal);
-                if (targetModal) {
-                    targetModal.style.display = "flex";
-                    setTimeout(() => targetModal.classList.add("show"), 10);
-                    targetModal.querySelector(".modal-title").textContent = experienceInfo.title;
-                    targetModal.querySelector(".modal-description").textContent = experienceInfo.description;
+              if (selectedModal) {
+                  const targetModal = document.getElementById(selectedModal);
+                  if (targetModal) {
+                      targetModal.style.display = "flex";
+                      setTimeout(() => targetModal.classList.add("show"), 10);
+                      targetModal.querySelector(".modal-title").textContent = experienceInfo.title;
+                      targetModal.querySelector(".modal-description").textContent = experienceInfo.description;
 
-                    // Fix audio path and load it correctly
-                    const audioElement = targetModal.querySelector("audio");
-                    if (audioElement) {
-                        audioElement.src = `assets/audio/${experienceInfo.audio}`;
-                        audioElement.load();
-                        audioElement.play().catch(error => console.error("Autoplay Blocked:", error));
-                    }
-                    
-                }
-            }
-        }, 3000);
-    }, 300);
-});
+                      // Handle autoplay
+                      const audioElement = targetModal.querySelector("audio");
+                      if (audioElement) {
+                          // Stop any currently playing audio
+                          document.querySelectorAll("audio").forEach(audio => {
+                              audio.pause();
+                              audio.currentTime = 0;
+                          });
+
+                          audioElement.src = experienceInfo.audio;
+                          audioElement.load();
+                          
+                          // Play the audio and handle autoplay restrictions
+                          audioElement.play()
+                              .then(() => console.log("Audio playing successfully"))
+                              .catch(error => console.error("Autoplay blocked:", error));
+                      } else {
+                          console.warn("No audio element found in modal:", targetModal);
+                      }
+                  }
+              }
+          }, 3000);
+      }, 300);
+  });
 });
 
 backButtons.forEach(button => {
