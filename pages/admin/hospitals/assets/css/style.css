@@ -55,7 +55,7 @@
   }
   
   .nav-link {
-    color: #F1F0E8;
+    color: #6c757d;
     font-weight: 500;
     position: relative;
     text-decoration: none;
@@ -63,11 +63,11 @@
   }
   
   .navbar-nav .nav-link.active{
-    color: #B3C8CF;
+    color: #274C77;
   }
   
   .nav-link:hover, .nav-link.active:hover {
-    color: #B3C8CF;
+    color: #274C77;
   }
   
   .nav-link.dropdown-toggle {
@@ -255,4 +255,14 @@
     .footer a {
       font-size: 0.875rem;
     }
+  }
+
+  body {
+    background: linear-gradient(to bottom, #E7ECEF, #89A8B2, #274C77);
+    background-size: cover;
+  }
+
+  /* ====== Hospital Section ====== */
+  .hs-container{
+    padding: 50px;
   }
