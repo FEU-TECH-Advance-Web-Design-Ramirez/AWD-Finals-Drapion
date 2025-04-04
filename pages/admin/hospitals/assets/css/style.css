@@ -2,11 +2,6 @@
     font-family: Poppins, sans-serif;
   }
 
-body{
-  background: linear-gradient(to bottom, #E7ECEF, #89A8B2, #274C77);
-    background-size: cover;
-}
-
   /* ====== Navigation Bar ====== */
     
   .navbar {
@@ -167,7 +162,7 @@ body{
     .offcanvas-body .nav-link {
         padding: 0.25rem 0;
     }
-    .logout-button {
+    .login-button {
         padding: 0.25rem 0.5rem;
     }
   }
@@ -262,18 +257,21 @@ body{
     }
   }
 
-  .user-section{
+  body {
+    background: linear-gradient(to bottom, #E7ECEF, #89A8B2, #274C77);
+    background-size: cover;
+  }
+
+  /* ====== Hospital Section ====== */
+  .hs-container{
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .card{
     width: min(800px, 90%);
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Horizontally center the content */
   }
 
   h2.text-center {
