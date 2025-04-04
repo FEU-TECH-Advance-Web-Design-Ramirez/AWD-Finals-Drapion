@@ -54,3 +54,11 @@ function formatTime(time) {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
+
+function showPopup(event) {
+  event.preventDefault();
+
+  alert("Please log in to access this feature and enjoy a personalized experience.");
+
+  window.location.href = "/AWD-Finals-Drapion/pages/login-signup/index.html"; 
+}
