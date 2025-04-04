@@ -153,7 +153,7 @@
   .offcanvas-body .nav-link {
       padding: 0.25rem 0;
   }
-  .login-button {
+  .logout-button {
       padding: 0.25rem 0.5rem;
   }
 }
@@ -170,7 +170,7 @@
   color: #00b0dc;
   margin-top: 1rem;
 }
-.login {
+.logout {
   padding: 10px 20px;
   background-color: #274C77;
   color: #F1F0E8;
@@ -184,7 +184,7 @@
   width: 120px;
 }
 
-.login:hover{
+.logout:hover{
   background-color: #F1F0E8;
   color: #274C77;
 }
