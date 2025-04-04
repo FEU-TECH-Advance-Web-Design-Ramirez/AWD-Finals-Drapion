@@ -323,3 +323,102 @@
   background-color: #F1F0E8;
   color: #274C77;
 }
+
+/* ====== First Section ====== */
+body {
+  overflow-x: hidden;
+  font-synthesis: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cs1 {
+  background: url(../img/cs1-bg.png) no-repeat center center/contain;
+  position: relative;
+  padding-bottom: 8rem;
+  color: #F1F0E8;
+  background-color: #E7ECEF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: 110%;
+}
+
+.cs1 .container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 2rem;
+  margin-top: 25vh;
+}
+
+.lead{
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.bookAppointment {
+  padding: 10px 20px;
+  background-color: #274C77;
+  color: #F1F0E8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.bookAppointment:hover{
+  background-color: #F1F0E8;
+  color: #274C77;
+}
+
+@media (max-width: 992px) {
+  .cs1 {
+    background: none;
+    color: #274C77;
+    background-color: #E7ECEF;
+  }
+
+  .cs1 .container {
+    text-align: center;
+    left: 0;
+    padding: 1rem;
+    margin-top: 0px;
+  }
+}
+
+.cs2{
+  background: url(../img/cs2-bg.png) no-repeat center center/cover;
+}
+
+.cs2 h2{
+  color: #F1F0E8;
+}
+
+.cs2{
+background-color: #E7ECEF;
+}
+
+.cs2 .card{
+border-radius: 30px;
+}
+
+
+@media (min-width: 991px) {
+.cs2 .card {
+  width: 100%;
+}
+.cs2 .container {
+max-width: 750px;
+}
+.cs2 h2{
+color: #274C77;
+}
+}
