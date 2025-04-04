@@ -63,12 +63,12 @@ const experienceData = {
       "Sleep": { 
         title: "Sleeping Meditation for Beginner", 
         description: "A gentle introduction to sleep meditation, guiding you to relax and unwind.", 
-        audio: ""
+        audio: "../assets/audio/beginner-sleep.mp3"
       },
       "Sadness": { 
         title: "Sadness Meditation for Beginner", 
         description: "A beginner-friendly meditation to help process and heal from sadness.", 
-        audio: "" 
+        audio: "/AWD-Finals-Drapion/pages/meditation/assets/audio/beginner-sadness.mp3" 
       },
       "Self Esteem": { 
         title: "Self-Esteem Meditation for Beginner", 
